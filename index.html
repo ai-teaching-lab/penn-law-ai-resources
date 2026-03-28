@@ -577,17 +577,17 @@
     <h3>Getting Started</h3>
     <ul>
       <li><strong>AI tools at Penn Law</strong></li>
+      <li><strong>Claude Code</strong> &mdash; setup &amp; getting started</li>
       <li><strong>What AI can do</strong></li>
-      <li><strong>Getting set up</strong></li>
     </ul>
   </div>
   <div class="overview-col" data-nav="use-cases">
     <h3>Use Cases &amp; Tips</h3>
     <ul>
       <li><strong>Prompting fundamentals</strong></li>
-      <li><strong>Research &amp; analysis</strong></li>
-      <li><strong>Drafting &amp; writing</strong></li>
-      <li><strong>Data &amp; admin</strong></li>
+      <li><strong>Use cases</strong> &mdash; research, drafting, data, teaching</li>
+      <li><strong>Claude Code deep dive</strong> &mdash; CLAUDE.md, skills, MCP</li>
+      <li><strong>Claude Code skills</strong> &mdash; 5 faculty tools</li>
     </ul>
   </div>
   <div class="overview-col" data-nav="policies">
@@ -668,6 +668,23 @@
         </div>
       </div>
 
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="section-label">Getting Set Up</p>
+    <h2 class="section-title">Claude Code</h2>
+
+    <div class="prose-section">
+      <p><a href="https://claude.com/product/claude-code" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Claude Code</a> is Anthropic's AI coding and productivity tool &mdash; it works in your terminal, in VS Code, as a desktop app, or in your browser. Despite the name, it's not just for coding. I use it for writing, research, document production, and administrative tasks. It's the tool behind the Claude Code Skills listed on this page and on the pedagogy portal.</p>
+      <p>You need a <a href="https://claude.com/pricing" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Claude Pro or Team subscription</a> ($20/month) to use it. The free tier won't cut it &mdash; you need the pro models and the privacy controls that come with a paid plan.</p>
+      <h3>Getting Started</h3>
+      <ul>
+        <li><a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Overview &amp; installation</a> &mdash; install the CLI, VS Code extension, or desktop app</li>
+        <li><a href="https://code.claude.com/docs/en/quickstart" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Quickstart</a> &mdash; walk through your first task</li>
+        <li><a href="https://github.com/polkwagner/law-faculty-claude-skills" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Law faculty skills</a> &mdash; my open-source skills for faculty tasks (install instructions in the README)</li>
+      </ul>
+      <p>If you want help getting set up, email me &mdash; I'm happy to walk you through it.</p>
     </div>
 
     <div class="divider"></div>
@@ -789,6 +806,29 @@
         <li>Use it to generate multiple options, then pick the best one</li>
         <li>When it gets something wrong, tell it &mdash; it adjusts</li>
       </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="section-label">Going Deeper</p>
+    <h2 class="section-title">Getting More Out of Claude Code</h2>
+
+    <div class="prose-section">
+      <p>If you've gotten started with Claude Code and want to do more, here are some features worth knowing about.</p>
+
+      <h3>CLAUDE.md &mdash; Persistent Instructions</h3>
+      <p>Drop a file called <code>CLAUDE.md</code> in any project folder and Claude Code reads it at the start of every session. Use it for coding standards, project context, preferred conventions &mdash; anything you'd otherwise repeat every time. I use mine to set voice and formatting preferences so I don't have to re-explain them. <a href="https://code.claude.com/docs/en/memory" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Documentation &rarr;</a></p>
+
+      <h3>Custom Skills</h3>
+      <p>Skills are reusable prompts you can install and invoke by name &mdash; like <code>/commit</code> or <code>/review-pr</code>. The <a href="https://github.com/polkwagner/law-faculty-claude-skills" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">law faculty skills</a> I've built are examples of this. You can also create your own for any workflow you repeat. <a href="https://code.claude.com/docs/en/skills" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Documentation &rarr;</a></p>
+
+      <h3>MCP &mdash; Connecting to External Tools</h3>
+      <p>The Model Context Protocol lets Claude Code connect to external services &mdash; Google Drive, Gmail, calendars, databases, Slack, and more. This is how I have Claude draft emails, check my calendar, and pull documents without leaving the conversation. <a href="https://code.claude.com/docs/en/mcp" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Documentation &rarr;</a></p>
+
+      <h3>Multiple Environments</h3>
+      <p>Claude Code works in the <a href="https://code.claude.com/docs/en/quickstart" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">terminal</a>, <a href="https://code.claude.com/docs/en/vs-code" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">VS Code</a>, the <a href="https://code.claude.com/docs/en/desktop-quickstart" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">desktop app</a>, and <a href="https://code.claude.com/docs/en/claude-code-on-the-web" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">the web</a>. Your settings, CLAUDE.md files, and MCP servers carry across all of them. Start a task on your laptop, pick it up from your phone.</p>
+
+      <p style="margin-top:1.5rem;">Full documentation: <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">code.claude.com/docs</a></p>
     </div>
 
     <div class="divider"></div>
