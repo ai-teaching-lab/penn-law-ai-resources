@@ -4,7 +4,572 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Resources — Penn Carey Law</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #011F5B;
+    --navy-mid: #0a2f78;
+    --navy-light: #1a3f8f;
+    --red: #990000;
+    --red-light: #cc2222;
+    --cream: #FAF8F3;
+    --warm-gray: #F2EFE8;
+    --mid-gray: #8C8880;
+    --dark-gray: #3A3630;
+    --border: #D8D4CC;
+    --gold: #B8960C;
+    --gold-light: #F5EFD0;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark-gray);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--navy);
+    color: white;
+    padding: 0 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .site-header .wordmark {
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: rgba(255,255,255,0.92);
+    text-decoration: none;
+  }
+  .site-header .wordmark span {
+    color: rgba(255,255,255,0.5);
+    margin: 0 8px;
+  }
+  .header-badge {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    padding: 5rem 3rem 4.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15) 30%, rgba(255,255,255,0.15) 70%, transparent);
+  }
+  .hero-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .hero-logo {
+    display: block;
+    height: 120px;
+    width: auto;
+    margin: 0 auto 2rem;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 1.25rem;
+  }
+  .hero h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(2.4rem, 5vw, 3.75rem);
+    font-weight: 500;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.01em;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: rgba(255,255,255,0.75);
+  }
+  .hero-sub {
+    font-size: 17px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    max-width: 580px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 2.5rem;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.03em;
+  }
+  .hero-meta strong {
+    color: rgba(255,255,255,0.65);
+    font-weight: 500;
+  }
+
+  /* ── NAV TABS ── */
+  .tab-nav-wrap {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 56px;
+    z-index: 90;
+  }
+  .tab-nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tab-nav::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--mid-gray);
+    padding: 0 1.25rem;
+    height: 48px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: color 0.18s, border-color 0.18s;
+  }
+  .tab-btn:hover { color: var(--dark-gray); }
+  .tab-btn.active {
+    color: var(--navy);
+    border-bottom-color: var(--navy);
+  }
+
+  /* ── LAYOUT ── */
+  .page-body {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3.5rem 3rem 6rem;
+  }
+
+  .tab-pane { display: none; }
+  .tab-pane.active { display: block; }
+
+  /* ── SECTION HEADINGS ── */
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 0.6rem;
+  }
+  .section-intro {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--mid-gray);
+    max-width: 640px;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+
+  /* ── RESOURCE CARDS ── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 3rem;
+  }
+  .card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: border-color 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+  .card:hover {
+    border-color: #b8b4ac;
+    transform: translateY(-1px);
+  }
+  .card-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 16px;
+  }
+  .icon-blue { background: #EBF1FB; color: var(--navy); }
+  .icon-red  { background: #FBEAEA; color: var(--red); }
+  .icon-gold { background: var(--gold-light); color: #7A6200; }
+  .icon-green{ background: #EAF4E8; color: #1E6B1A; }
+
+  .card h3 {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+  .card p {
+    font-size: 13.5px;
+    color: var(--mid-gray);
+    line-height: 1.65;
+    flex: 1;
+  }
+  .card-meta {
+    font-size: 11.5px;
+    color: var(--mid-gray);
+    margin-top: 0.75rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--warm-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card-meta .card-date { opacity: 0.7; }
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 0.9rem;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--navy);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+  .card-link::after {
+    content: '\2192';
+    font-size: 13px;
+    transition: transform 0.15s;
+  }
+  .card-link:hover::after { transform: translateX(3px); }
+
+  /* ── RESOURCE TAG ── */
+  .resource-tag {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  .tag-faq     { background: #EBF1FB; color: #0a2f78; }
+  .tag-slides  { background: var(--gold-light); color: #5A4700; }
+  .tag-memo    { background: #FBEAEA; color: #7A0000; }
+  .tag-notes   { background: #EAF4E8; color: #1E6B1A; }
+  .tag-guide   { background: #F0EBF7; color: #4A2D7A; }
+
+  /* ── CALLOUT / HIGHLIGHT BOX ── */
+  .callout {
+    background: var(--navy);
+    color: white;
+    border-radius: 10px;
+    padding: 2rem 2.25rem;
+    margin-bottom: 2.5rem;
+  }
+  .callout h3 {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+  .callout p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.7;
+  }
+  .callout-gold {
+    background: var(--gold-light);
+    border-left: 3px solid var(--gold);
+  }
+  .callout-gold h3 { color: #5A4700; }
+  .callout-gold p { color: #6B5500; }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 2.5rem 0;
+  }
+
+  /* ── CONTACT FOOTER ── */
+  .contact-footer {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 2rem 2.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+  }
+  .contact-footer p {
+    font-size: 14px;
+    color: var(--mid-gray);
+    max-width: 480px;
+    line-height: 1.65;
+  }
+  .contact-footer p em {
+    font-style: italic;
+    color: var(--dark-gray);
+  }
+  .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--navy);
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13.5px;
+    font-weight: 500;
+    padding: 0.6rem 1.4rem;
+    border-radius: 6px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.18s;
+  }
+  .contact-btn:hover { background: var(--navy-mid); }
+
+  /* ── FOOTER BAR ── */
+  .site-footer {
+    background: var(--dark-gray);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    font-size: 12px;
+    padding: 1.5rem;
+    letter-spacing: 0.03em;
+  }
+  .site-footer strong { color: rgba(255,255,255,0.75); font-weight: 500; }
+
+  /* ── OVERVIEW MAP ── */
+  .overview-map {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2.5rem 3rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  .overview-col {
+    cursor: pointer;
+    padding: 1.25rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: white;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .overview-col:hover {
+    border-color: var(--navy);
+    transform: translateY(-1px);
+  }
+  .overview-col h3 {
+    font-family: 'EB Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.65rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--navy);
+  }
+  .overview-col ul {
+    list-style: none;
+    padding: 0;
+  }
+  .overview-col ul li {
+    font-size: 13px;
+    color: var(--mid-gray);
+    padding: 0.25rem 0;
+    line-height: 1.45;
+  }
+  .overview-col ul li strong {
+    color: var(--dark-gray);
+    font-weight: 500;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 720px) {
+    .overview-map { grid-template-columns: 1fr; padding: 1.5rem; }
+    .hero { padding: 3rem 1.5rem 3rem; }
+    .site-header { padding: 0 1.5rem; }
+    .tab-nav { padding: 0 1.5rem; }
+    .page-body { padding: 2.5rem 1.5rem 4rem; }
+    .hero-meta { flex-direction: column; gap: 0.5rem; }
+    .contact-footer { flex-direction: column; text-align: center; }
+    .hero-logo { height: 90px; }
+  }
+</style>
 </head>
 <body>
+
+<!-- SITE HEADER -->
+<header class="site-header">
+  <a class="wordmark" href="#">Penn Carey Law <span>|</span> AI Resources</a>
+  <div class="header-badge">AI Law Lab</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <img class="hero-logo" src="assets/ai-law-lab-logo.png" alt="AI Law Lab">
+    <p class="hero-eyebrow">Penn Carey Law</p>
+    <h1>AI <em>Resources</em></h1>
+    <p class="hero-sub">A guide to the AI tools and resources available to Penn Law faculty and staff &mdash; what we have, how to use them, and what to keep in mind.</p>
+    <div class="hero-meta">
+      <div><strong>Last updated</strong> March 2026</div>
+      <div><strong>Maintained by</strong> Polk Wagner, Deputy Dean for Academic Affairs &amp; Innovation</div>
+      <div><strong>Contact</strong> pwagner@law.upenn.edu</div>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW MAP -->
+<div class="overview-map">
+  <div class="overview-col" data-nav="getting-started">
+    <h3>Getting Started</h3>
+    <ul>
+      <li><strong>AI tools at Penn Law</strong></li>
+      <li><strong>What AI can do</strong></li>
+      <li><strong>Getting set up</strong></li>
+    </ul>
+  </div>
+  <div class="overview-col" data-nav="use-cases">
+    <h3>Use Cases &amp; Tips</h3>
+    <ul>
+      <li><strong>Prompting fundamentals</strong></li>
+      <li><strong>Research &amp; analysis</strong></li>
+      <li><strong>Drafting &amp; writing</strong></li>
+      <li><strong>Data &amp; admin</strong></li>
+    </ul>
+  </div>
+  <div class="overview-col" data-nav="policies">
+    <h3>Policies &amp; Guidelines</h3>
+    <ul>
+      <li><strong>Data &amp; confidentiality</strong></li>
+      <li><strong>Responsible use</strong></li>
+      <li><strong>Penn policies</strong></li>
+    </ul>
+  </div>
+  <div class="overview-col" data-nav="ai-at-penn">
+    <h3>AI at Penn</h3>
+    <ul>
+      <li><strong>AI Law Lab</strong></li>
+      <li><strong>Penn-wide initiatives</strong></li>
+      <li><strong>Reading &amp; further learning</strong></li>
+    </ul>
+  </div>
+</div>
+
+<!-- TAB NAV -->
+<div class="tab-nav-wrap">
+  <nav class="tab-nav" role="tablist">
+    <button class="tab-btn active" data-tab="getting-started" role="tab">Getting Started</button>
+    <button class="tab-btn" data-tab="use-cases" role="tab">Use Cases &amp; Tips</button>
+    <button class="tab-btn" data-tab="policies" role="tab">Policies &amp; Guidelines</button>
+    <button class="tab-btn" data-tab="ai-at-penn" role="tab">AI at Penn</button>
+  </nav>
+</div>
+
+<!-- PAGE BODY -->
+<main class="page-body">
+
+  <!-- ═══ TAB 1: GETTING STARTED ═══ -->
+  <section class="tab-pane active" id="getting-started">
+  </section>
+
+  <!-- ═══ TAB 2: USE CASES & TIPS ═══ -->
+  <section class="tab-pane" id="use-cases">
+  </section>
+
+  <!-- ═══ TAB 3: POLICIES & GUIDELINES ═══ -->
+  <section class="tab-pane" id="policies">
+  </section>
+
+  <!-- ═══ TAB 4: AI AT PENN ═══ -->
+  <section class="tab-pane" id="ai-at-penn">
+  </section>
+
+  <!-- CONTACT FOOTER (always visible) -->
+  <div class="contact-footer">
+    <p>Questions about AI tools at Penn Law? Suggestions for this page? Want help getting started? <a href="https://pennlaw.upenn.edu/pedagogy" style="color:var(--navy); text-decoration:underline;">Faculty pedagogy resources</a> are also available.</p>
+    <a class="contact-btn" href="mailto:pwagner@law.upenn.edu">Contact Polk Wagner &rarr;</a>
+  </div>
+
+</main>
+
+<!-- SITE FOOTER -->
+<footer class="site-footer">
+  <strong>Penn Carey Law</strong> &middot; AI Resources &middot; Maintained by Polk Wagner, Deputy Dean for Academic Affairs &amp; Innovation &middot; Last updated March 2026
+</footer>
+
+<script>
+  const tabs = document.querySelectorAll('.tab-btn');
+  const panes = document.querySelectorAll('.tab-pane');
+
+  function activateTab(target) {
+    tabs.forEach(t => t.classList.remove('active'));
+    panes.forEach(p => p.classList.remove('active'));
+    const btn = document.querySelector(`.tab-btn[data-tab="${target}"]`);
+    if (btn) btn.classList.add('active');
+    document.getElementById(target).classList.add('active');
+  }
+
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      activateTab(btn.dataset.tab);
+      window.scrollTo({ top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior: 'smooth' });
+    });
+  });
+
+  document.querySelectorAll('.overview-col').forEach(col => {
+    col.addEventListener('click', () => {
+      activateTab(col.dataset.nav);
+      window.scrollTo({ top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior: 'smooth' });
+    });
+  });
+</script>
 </body>
 </html>
