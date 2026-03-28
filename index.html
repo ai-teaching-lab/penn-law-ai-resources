@@ -496,8 +496,8 @@
     margin: 0 auto;
     padding: 2.5rem 3rem 2rem;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem;
   }
   .overview-col {
     cursor: pointer;
@@ -586,7 +586,14 @@
     <ul>
       <li><strong>Prompting fundamentals</strong></li>
       <li><strong>Use cases</strong> &mdash; research, drafting, data, teaching</li>
+      <li><strong>Patterns that work</strong></li>
+    </ul>
+  </div>
+  <div class="overview-col" data-nav="tools">
+    <h3>Tools &amp; Setup</h3>
+    <ul>
       <li><strong>Claude Code deep dive</strong> &mdash; CLAUDE.md, skills, MCP</li>
+      <li><strong>Model APIs</strong> &mdash; Anthropic, OpenAI, other models</li>
       <li><strong>Claude Code skills</strong> &mdash; 5 faculty tools</li>
     </ul>
   </div>
@@ -613,6 +620,7 @@
   <nav class="tab-nav" role="tablist">
     <button class="tab-btn active" data-tab="getting-started" role="tab">Getting Started</button>
     <button class="tab-btn" data-tab="use-cases" role="tab">Use Cases &amp; Tips</button>
+    <button class="tab-btn" data-tab="tools" role="tab">Tools &amp; Setup</button>
     <button class="tab-btn" data-tab="policies" role="tab">Policies &amp; Guidelines</button>
     <button class="tab-btn" data-tab="ai-at-penn" role="tab">AI at Penn</button>
   </nav>
@@ -808,7 +816,14 @@
       </ul>
     </div>
 
-    <div class="divider"></div>
+  </section>
+
+  <!-- ═══ TAB 3: TOOLS & SETUP ═══ -->
+  <section class="tab-pane" id="tools">
+
+    <p class="section-label">Tools &amp; Setup</p>
+    <h2 class="section-title">Claude Code &amp; Model APIs</h2>
+    <p class="section-intro">Advanced tools and setup for getting the most out of AI &mdash; Claude Code features, model APIs, and ready-made skills for faculty tasks.</p>
 
     <p class="section-label">Going Deeper</p>
     <h2 class="section-title">Getting More Out of Claude Code</h2>
@@ -913,7 +928,7 @@
 
   </section>
 
-  <!-- ═══ TAB 3: POLICIES & GUIDELINES ═══ -->
+  <!-- ═══ TAB 4: POLICIES & GUIDELINES ═══ -->
   <section class="tab-pane" id="policies">
 
     <p class="section-label">Policies &amp; Guidelines</p>
@@ -999,7 +1014,7 @@
 
   </section>
 
-  <!-- ═══ TAB 4: AI AT PENN ═══ -->
+  <!-- ═══ TAB 5: AI AT PENN ═══ -->
   <section class="tab-pane" id="ai-at-penn">
 
     <p class="section-label">AI at Penn</p>
