@@ -299,6 +299,34 @@
   .tag-memo    { background: #FBEAEA; color: #7A0000; }
   .tag-notes   { background: #EAF4E8; color: #1E6B1A; }
   .tag-guide   { background: #F0EBF7; color: #4A2D7A; }
+  .tag-tool    { background: #E0E8F5; color: var(--navy); }
+
+  /* ── PROSE SECTION ── */
+  .prose-section {
+    max-width: 740px;
+  }
+  .prose-section h3 {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 0.6rem;
+    margin-top: 2rem;
+    line-height: 1.3;
+  }
+  .prose-section h3:first-child {
+    margin-top: 0;
+  }
+  .prose-section p {
+    font-size: 15px;
+    color: var(--dark-gray);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .prose-section strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
 
   /* ── CALLOUT / HIGHLIGHT BOX ── */
   .callout {
@@ -518,6 +546,84 @@
 
   <!-- ═══ TAB 1: GETTING STARTED ═══ -->
   <section class="tab-pane active" id="getting-started">
+
+    <p class="section-label">Getting Started</p>
+    <h2 class="section-title">AI Tools at Penn Law</h2>
+    <p class="section-intro">Penn Law provides access to several AI platforms for faculty and staff. Here's what's available and how to get in.</p>
+
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-icon icon-blue">⚖</div>
+        <h3>Harvey</h3>
+        <p>Legal-specific AI for research, drafting, and analysis. All upper-level students, full-time faculty, and staff have access. Log in with your LawKey username.</p>
+        <div class="card-meta">
+          <span class="resource-tag tag-tool">AI Tool</span>
+        </div>
+        <a class="card-link" href="https://app.harvey.ai" target="_blank" rel="noopener">Log in to Harvey</a>
+      </div>
+
+      <div class="card">
+        <div class="card-icon icon-green">💬</div>
+        <h3>ChatGPT EDU</h3>
+        <p>OpenAI's education platform. All 1Ls have accounts, plus Littleton Fellows and 1L TAs. Faculty and staff can request access &mdash; email <a href="mailto:ITShelp@law.upenn.edu" style="color:var(--navy);">ITShelp@law.upenn.edu</a>.</p>
+        <div class="card-meta">
+          <span class="resource-tag tag-tool">AI Tool</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon icon-gold">✦</div>
+        <h3>Claude</h3>
+        <p>Anthropic's AI assistant &mdash; strong at writing, analysis, and coding. Available to faculty. Contact me for details at <a href="mailto:pwagner@law.upenn.edu" style="color:var(--navy);">pwagner@law.upenn.edu</a>.</p>
+        <div class="card-meta">
+          <span class="resource-tag tag-tool">AI Tool</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-icon icon-red">📚</div>
+        <h3>Westlaw AI / Lexis+ AI</h3>
+        <p>AI features built into the research platforms you already use. Westlaw's AI-Assisted Research and Lexis+ AI are available through existing law school subscriptions.</p>
+        <div class="card-meta">
+          <span class="resource-tag tag-tool">AI Tool</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="section-label">Orientation</p>
+    <h2 class="section-title">What Can AI Actually Do?</h2>
+
+    <div class="prose-section">
+
+      <h3>The Short Version</h3>
+      <p>The AI tools listed above are all built on <strong>large language models</strong> (LLMs) &mdash; software trained on enormous amounts of text that can generate fluent, often remarkably useful responses to natural-language prompts. You don't need to understand the engineering. The practical takeaway: these tools are very good at working with language, and not so good at everything else.</p>
+
+      <p>Think of it this way: you have a very fast, very well-read research assistant who sometimes makes things up. That's not a knock &mdash; it's the right mental model. When you treat the output as a strong first draft that needs your judgment and verification, these tools can save you real time.</p>
+
+      <h3>Where AI is Genuinely Useful</h3>
+      <p><strong>Drafting and writing.</strong> LLMs are excellent first-draft machines. Emails, memos, syllabi, recommendation letters, committee reports &mdash; give it context and a clear prompt, and you'll get a solid starting point in seconds. I use this daily.</p>
+
+      <p><strong>Brainstorming and outlining.</strong> When you're staring at a blank page, AI is a surprisingly good thought partner. It won't have your ideas, but it will give you a structured framework to react to &mdash; which is often exactly what you need to get moving.</p>
+
+      <p><strong>Summarizing and explaining.</strong> Drop in a long document, article, or set of comments and ask for a summary. Ask it to explain a technical concept in plain language. This works well and can save significant time on reading-heavy tasks.</p>
+
+      <p><strong>Research assistance.</strong> Harvey and the Westlaw/Lexis AI tools are designed specifically for legal research &mdash; finding relevant cases, statutes, and secondary sources. They're not a replacement for careful research, but they can accelerate the early stages significantly.</p>
+
+      <h3>Where AI Falls Short</h3>
+      <p><strong>It makes things up.</strong> This is the big one. LLMs generate plausible-sounding text, and sometimes that text is simply wrong &mdash; fabricated case names, invented statistics, confident but incorrect legal analysis. The field calls this "hallucination." It's not a bug that's getting fixed next quarter; it's a fundamental feature of how these models work. Always verify anything that matters.</p>
+
+      <p><strong>Math and precision.</strong> LLMs are language tools, not calculators. They'll get basic arithmetic right most of the time, but anything involving complex calculations, data analysis, or precise quantitative reasoning should be checked independently.</p>
+
+      <p><strong>Confidentiality.</strong> When you type something into an AI tool, that text goes to a server. Harvey is contracted with the law school and has appropriate data protections. Public tools like the free version of ChatGPT &mdash; different story. Don't put confidential information into any tool without understanding its data handling. More on this in the <a href="#" onclick="activateTab('policies'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;" style="color:var(--navy); text-decoration:underline;">Policies &amp; Guidelines</a> tab.</p>
+
+      <p><strong>It doesn't "understand" anything.</strong> This is worth saying plainly: LLMs don't know what they're saying. They predict the next word based on patterns in training data. The output can be impressive &mdash; even insightful &mdash; but there's no reasoning happening behind the curtain the way there is when you think through a problem. Your judgment is not optional.</p>
+
+    </div>
+
   </section>
 
   <!-- ═══ TAB 2: USE CASES & TIPS ═══ -->
