@@ -407,6 +407,31 @@
     font-weight: 600;
   }
 
+  /* ── VERIFICATION NOTE ── */
+  .verify-note {
+    font-size: 12.5px;
+    color: var(--mid-gray);
+    font-style: italic;
+    background: var(--warm-gray);
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    margin-bottom: 2rem;
+    max-width: 740px;
+    line-height: 1.6;
+  }
+
+  /* ── PROSE LIST ── */
+  .prose-section ul {
+    margin: 0 0 1.25rem 1.25rem;
+    padding: 0;
+  }
+  .prose-section ul li {
+    font-size: 15px;
+    color: var(--dark-gray);
+    line-height: 1.75;
+    margin-bottom: 0.35rem;
+  }
+
   /* ── DIVIDER ── */
   .divider {
     height: 1px;
@@ -769,6 +794,91 @@
 
   <!-- ═══ TAB 3: POLICIES & GUIDELINES ═══ -->
   <section class="tab-pane" id="policies">
+
+    <p class="section-label">Policies &amp; Guidelines</p>
+    <h2 class="section-title">Using AI Responsibly</h2>
+    <p class="section-intro">AI tools are powerful, but they come with real risks around data, accuracy, and confidentiality. Here's what you need to know.</p>
+
+    <div class="verify-note">Note: Specific data handling details below are pending verification &mdash; reach out to <a href="mailto:pwagner@law.upenn.edu" style="color:var(--navy);">pwagner@law.upenn.edu</a> with corrections.</div>
+
+    <div class="prose-section">
+
+      <!-- [VERIFY] Polk to confirm this list of safe-to-share items -->
+      <h3>What's Generally Safe to Share with AI Tools</h3>
+      <ul>
+        <li>Published materials and public information</li>
+        <li>Your own draft text &mdash; with caveats about enterprise vs. public tools (see below)</li>
+        <li>General questions about law, pedagogy, or administration</li>
+      </ul>
+      <p>The key distinction is between information that's already public (or your own work product) and information that belongs to someone else or is institutionally confidential. When in doubt, use the enterprise tools &mdash; they have contractual protections that the free versions don't.</p>
+
+      <!-- [VERIFY] Polk to confirm list and FERPA framing -->
+      <h3>What You Should NOT Share</h3>
+      <ul>
+        <li><strong>Student records, grades, or personal information</strong> &mdash; FERPA applies here, full stop</li>
+        <li><strong>Personnel matters</strong> &mdash; hiring deliberations, tenure discussions, performance reviews</li>
+        <li><strong>Confidential committee work</strong> &mdash; faculty governance, admissions deliberations</li>
+        <li><strong>Exam questions before administration</strong> &mdash; this should go without saying, but it's worth stating explicitly</li>
+        <li><strong>Anything covered by attorney-client privilege</strong></li>
+      </ul>
+      <p>This isn't an exhaustive list. The general principle: if you wouldn't paste it into an email to a stranger, don't paste it into a public AI tool.</p>
+
+      <!-- [VERIFY] Polk to confirm contractual terms for each tool -->
+      <h3>Enterprise vs. Public Tools</h3>
+      <p>Not all AI tools handle your data the same way. The distinction matters.</p>
+      <ul>
+        <li><strong>Harvey</strong> &mdash; enterprise agreement with Penn Law. Your inputs are not used to train models. Appropriate for most work-related tasks, including those involving sensitive (but not FERPA-protected) information.</li>
+        <li><strong>ChatGPT EDU</strong> &mdash; Penn's institutional agreement with OpenAI includes data protections. Your conversations are not used for model training.</li>
+        <li><strong>Public ChatGPT, Claude free tier, and other consumer tools</strong> &mdash; assume anything you type could be used for model training. Fine for general questions and your own draft text. Not appropriate for anything confidential or student-related.</li>
+      </ul>
+      <p>Bottom line: for sensitive work, use Harvey or ChatGPT EDU. For casual brainstorming with non-sensitive content, the public tools are fine.</p>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="section-label">Responsible Use</p>
+    <h2 class="section-title">Accuracy, Attribution, and Bias</h2>
+
+    <div class="prose-section">
+
+      <h3>AI Hallucinates &mdash; Verify Everything That Matters</h3>
+      <p>I said this in the Getting Started tab, and I'll say it again here because it's the single most important thing to understand about these tools: LLMs generate plausible text, not verified truth. They will fabricate case citations, invent statistics, and present made-up facts with complete confidence.</p>
+      <p>This isn't a minor issue. A lawyer was sanctioned for filing a brief with AI-fabricated case citations. Law review articles have been submitted with invented sources. It happens because the output <em>looks</em> right &mdash; and when you're moving fast, it's easy to trust it. Don't. Anything you plan to rely on, share externally, or put your name on should be independently verified.</p>
+
+      <h3>Attribution</h3>
+      <p>When and how to disclose AI use is still evolving, but the direction is clear: transparency is the right default. If AI contributed meaningfully to a piece of work, say so. For faculty publications, grant applications, and student-facing materials, err on the side of disclosure.</p>
+      <p>Professor Catherine Struve has put together a thoughtful guide on AI and attribution that's worth reading:</p>
+      <a class="card-link" href="https://polkwagner.github.io/penn-law-pedagogy-resources/" target="_blank" rel="noopener">Struve Guide on AI Attribution (Pedagogy Portal)</a>
+
+      <h3 style="margin-top: 2rem;">Bias</h3>
+      <p>AI models reflect the biases present in their training data. This is well-documented and worth keeping in mind &mdash; especially in contexts that affect people directly: hiring decisions, admissions-related work, student evaluations, or any process where fairness matters. AI output can be a useful input, but it shouldn't be the sole basis for consequential decisions about people.</p>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="section-label">Penn Policies</p>
+    <h2 class="section-title">Institutional Guidelines</h2>
+
+    <div class="prose-section">
+
+      <h3>Penn Law Exam Policies</h3>
+      <p>AI policies for exams are set by individual faculty and administered through the Registrar's office. The pedagogy portal has current guidance on exam AI policies, including model syllabus language and the different policy tiers available:</p>
+      <a class="card-link" href="https://polkwagner.github.io/penn-law-pedagogy-resources/" target="_blank" rel="noopener">Penn Law Pedagogy Resources &mdash; Exams</a>
+
+      <h3 style="margin-top: 2rem;">University-Level AI Guidance</h3>
+      <p>Penn's central administration is developing university-wide AI guidelines. This is a work in progress &mdash; I'll update this section as formal guidance is published. For now, the principles above apply: use enterprise tools for sensitive work, verify AI output, and disclose AI use where appropriate.</p>
+
+      <p>Specific policies vary by context. Research use, classroom use, and administrative use may each have different considerations. When a situation doesn't fit neatly into the guidance above, reach out &mdash; I'm happy to think through it.</p>
+
+    </div>
+
+    <div class="callout-gold callout">
+      <h3>When in Doubt, Ask</h3>
+      <p>AI policy at Penn and Penn Law is evolving. When in doubt about whether a particular use is appropriate, reach out &mdash; I'm happy to think through it with you. <a href="mailto:pwagner@law.upenn.edu" style="color:#5A4700; text-decoration:underline;">pwagner@law.upenn.edu</a></p>
+    </div>
+
   </section>
 
   <!-- ═══ TAB 4: AI AT PENN ═══ -->
