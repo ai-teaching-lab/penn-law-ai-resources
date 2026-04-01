@@ -232,19 +232,27 @@
     padding: clamp(1.5rem, 2.5vh, 2.5rem) clamp(1.5rem, 2vw, 2.5rem);
     border-radius: 6px;
     text-align: left;
+    border: 2px solid rgba(1,31,91,0.15);
+    background: #FFFFFF;
   }
 
   .shift-now {
-    background: rgba(1,31,91,0.08);
+    background: var(--navy);
+    border-color: var(--navy);
   }
 
   .shift-label {
-    font-size: clamp(0.7rem, 0.8vw, 0.9rem);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.1rem, 1.6vw, 1.6rem);
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.18em;
-    font-weight: 600;
-    color: var(--navy);
+    color: var(--muted);
     margin-bottom: 1.5vh;
+  }
+
+  .shift-now .shift-label {
+    color: var(--gold);
   }
 
   .shift-text {
@@ -252,6 +260,10 @@
     line-height: 1.55;
     color: var(--navy);
     font-weight: 400;
+  }
+
+  .shift-now .shift-text {
+    color: rgba(255,255,255,0.9);
   }
 
   .bottom-line {
@@ -315,6 +327,33 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--navy);
+  }
+
+  .progress-wrap {
+    position: fixed;
+    left: 5vw;
+    right: 5vw;
+    bottom: calc(1.5vh + clamp(60px, 8vh, 100px) + 1.5vh);
+    height: 8px;
+    background: rgba(1,31,91,0.18);
+    border-radius: 4px;
+    z-index: 15;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+
+  .progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), #E8B84B);
+    border-radius: 4px;
+    width: 0%;
+    animation: progress 12s linear infinite;
+    box-shadow: 0 0 10px rgba(200,146,17,0.4);
+  }
+
+  @keyframes progress {
+    from { width: 0%; }
+    to { width: 100%; }
   }
 
   .dots {
@@ -447,6 +486,11 @@
   </section>
 
   <!-- PERSISTENT FOOTER -->
+  <!-- PROGRESS BAR -->
+  <div class="progress-wrap">
+    <div class="progress-bar" id="progress-bar"></div>
+  </div>
+
   <footer class="footer" id="signage-footer">
     <div class="footer-wordmark">Penn Carey Law</div>
     <div class="dots">
@@ -473,6 +517,7 @@
   var panels = document.querySelectorAll('.panel');
   var dots = document.querySelectorAll('.dot');
   var footer = document.getElementById('signage-footer');
+  var bar = document.getElementById('progress-bar');
   var total = panels.length;
   var current = 0;
 
@@ -489,6 +534,11 @@
     } else {
       footer.classList.remove('hidden');
     }
+
+    // Restart progress bar animation
+    bar.style.animation = 'none';
+    bar.offsetHeight; // force reflow
+    bar.style.animation = '';
   }
 
   setInterval(function() {
