@@ -31,9 +31,44 @@
     overflow: hidden;
   }
 
+  body { display: flex; flex-direction: column; }
+
+  /* Lab attribution stripe (above the screen) */
+  .lab-stripe {
+    background: #FAF3DD;
+    border-bottom: 1px solid #E8DEB9;
+    padding: 0.5rem 2.8vw;
+    flex-shrink: 0;
+  }
+  .lab-stripe-link {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: #5A607A;
+  }
+  .lab-stripe-logo { height: 28px; width: auto; flex-shrink: 0; }
+  .lab-stripe-text {
+    flex: 1;
+    font-size: clamp(11px, 0.85vw, 13px);
+    line-height: 1.4;
+  }
+  .lab-stripe-cta {
+    font-size: clamp(10px, 0.7vw, 11px);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #822024;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .lab-stripe-link:hover .lab-stripe-cta { text-decoration: underline; }
+
   .screen {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    flex: 1;
+    min-height: 0;
     display: grid;
     grid-template-rows: auto auto 1fr auto;
     padding: 2.2vh 2.8vw;
@@ -242,6 +277,16 @@
 </style>
 </head>
 <body>
+
+<!-- TOP STRIPE: AI Teaching Lab attribution -->
+<div class="lab-stripe">
+  <a class="lab-stripe-link" href="https://ai-teaching-lab.org/" target="_blank" rel="noopener">
+    <img class="lab-stripe-logo" src="assets/ai-teaching-lab-heading.svg" alt="AI Teaching Lab" />
+    <span class="lab-stripe-text">Research, tools, and teaching on AI in legal education and practice.</span>
+    <span class="lab-stripe-cta">Visit the Lab &rarr;</span>
+  </a>
+</div>
+
 <div class="screen">
 
   <!-- TOP BAR -->
