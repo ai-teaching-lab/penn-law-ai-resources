@@ -17,13 +17,25 @@
     --red: #990000;
     --cream: #FAF8F3;
     --warm-gray: #F2EFE8;
-    --mid-gray: #8C8880;
+    --mid-gray: #6B6863;
     --dark-gray: #3A3630;
     --border: #D8D4CC;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
+
+  /* Focus indicators for keyboard navigation (WCAG 2.4.7) */
+  *:focus-visible {
+    outline: 2px solid var(--navy);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  .site-header a:focus-visible,
+  .site-footer a:focus-visible {
+    outline-color: white;
+    outline-offset: 3px;
+  }
 
   body {
     font-family: 'DM Sans', sans-serif;
@@ -243,7 +255,7 @@
 
 <!-- SITE FOOTER -->
 <footer class="site-footer">
-  &copy; 2026 The Trustees of the University of Pennsylvania &middot; Licensed under <a href="license.html">CC BY 4.0</a> &middot; Last updated May 9, 2026
+  &copy; 2026 The Trustees of the University of Pennsylvania &middot; Licensed under <a href="license.html">CC BY 4.0</a> &middot; <a href="https://accessibility.web-resources.upenn.edu/get-help" target="_blank" rel="noopener">Report Accessibility Issues and Get Help</a> &middot; Last updated May 9, 2026
 </footer>
 
 </body>

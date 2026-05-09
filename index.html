@@ -19,7 +19,7 @@
     --red-light: #cc2222;
     --cream: #FAF8F3;
     --warm-gray: #F2EFE8;
-    --mid-gray: #8C8880;
+    --mid-gray: #6B6863;
     --dark-gray: #3A3630;
     --border: #D8D4CC;
     --gold: #B8960C;
@@ -29,6 +29,49 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   html { scroll-behavior: smooth; }
+
+  /* ── ACCESSIBILITY UTILITIES ── */
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    background: var(--navy);
+    color: white;
+    padding: 0.65rem 1.1rem;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13.5px;
+    font-weight: 500;
+    border-radius: 4px;
+    z-index: 1000;
+    transition: top 0.15s;
+  }
+  .skip-link:focus { top: 0.5rem; }
+
+  /* Focus indicators for keyboard navigation (WCAG 2.4.7) */
+  *:focus-visible {
+    outline: 2px solid var(--navy);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  .site-header a:focus-visible,
+  .site-header button:focus-visible,
+  .callout a:focus-visible,
+  .site-footer a:focus-visible {
+    outline-color: white;
+    outline-offset: 3px;
+  }
 
   body {
     font-family: 'DM Sans', sans-serif;
@@ -303,7 +346,7 @@
     font-weight: 400;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.65);
   }
 
   /* ── NAV TABS ── */
@@ -751,6 +794,9 @@
 </head>
 <body>
 
+<!-- Skip link for keyboard navigation (WCAG 2.4.1 Bypass Blocks) -->
+<a class="skip-link" href="#main">Skip to main content</a>
+
 <!-- TOP STRIPE: AI Teaching Lab attribution -->
 <div class="lab-stripe">
   <a class="lab-stripe-link" href="https://ai-teaching-lab.org/" target="_blank" rel="noopener">
@@ -831,20 +877,20 @@
 
 <!-- TAB NAV -->
 <div class="tab-nav-wrap">
-  <nav class="tab-nav" role="tablist">
-    <button class="tab-btn active" data-tab="getting-started" role="tab">Getting Started</button>
-    <button class="tab-btn" data-tab="use-cases" role="tab">Use Cases &amp; Tips</button>
-    <button class="tab-btn" data-tab="tools" role="tab">Tools &amp; Setup</button>
-    <button class="tab-btn" data-tab="policies" role="tab">Policies &amp; Guidelines</button>
-    <button class="tab-btn" data-tab="ai-at-penn" role="tab">AI at Penn</button>
+  <nav class="tab-nav" role="tablist" aria-label="Resource sections">
+    <button class="tab-btn active" data-tab="getting-started" role="tab" id="tab-btn-getting-started" aria-selected="true" aria-controls="getting-started">Getting Started</button>
+    <button class="tab-btn" data-tab="use-cases" role="tab" id="tab-btn-use-cases" aria-selected="false" aria-controls="use-cases" tabindex="-1">Use Cases &amp; Tips</button>
+    <button class="tab-btn" data-tab="tools" role="tab" id="tab-btn-tools" aria-selected="false" aria-controls="tools" tabindex="-1">Tools &amp; Setup</button>
+    <button class="tab-btn" data-tab="policies" role="tab" id="tab-btn-policies" aria-selected="false" aria-controls="policies" tabindex="-1">Policies &amp; Guidelines</button>
+    <button class="tab-btn" data-tab="ai-at-penn" role="tab" id="tab-btn-ai-at-penn" aria-selected="false" aria-controls="ai-at-penn" tabindex="-1">AI at Penn</button>
   </nav>
 </div>
 
 <!-- PAGE BODY -->
-<main class="page-body">
+<main class="page-body" id="main">
 
   <!-- ═══ TAB 1: GETTING STARTED ═══ -->
-  <section class="tab-pane active" id="getting-started">
+  <section class="tab-pane active" id="getting-started" role="tabpanel" aria-labelledby="tab-btn-getting-started" tabindex="0">
 
     <p class="section-label">Getting Started</p>
     <h2 class="section-title">AI Tools at Penn Law</h2>
@@ -989,7 +1035,7 @@
   </section>
 
   <!-- ═══ TAB 2: USE CASES & TIPS ═══ -->
-  <section class="tab-pane" id="use-cases">
+  <section class="tab-pane" id="use-cases" role="tabpanel" aria-labelledby="tab-btn-use-cases" tabindex="0">
 
     <p class="section-label">Use Cases &amp; Tips</p>
     <h2 class="section-title">Getting Better Results</h2>
@@ -1078,7 +1124,7 @@
   </section>
 
   <!-- ═══ TAB 3: TOOLS & SETUP ═══ -->
-  <section class="tab-pane" id="tools">
+  <section class="tab-pane" id="tools" role="tabpanel" aria-labelledby="tab-btn-tools" tabindex="0">
 
     <p class="section-label">Tools &amp; Setup</p>
     <h2 class="section-title">Getting More Out of Claude Code</h2>
@@ -1194,7 +1240,7 @@
   </section>
 
   <!-- ═══ TAB 4: POLICIES & GUIDELINES ═══ -->
-  <section class="tab-pane" id="policies">
+  <section class="tab-pane" id="policies" role="tabpanel" aria-labelledby="tab-btn-policies" tabindex="0">
 
     <p class="section-label">Policies &amp; Guidelines</p>
     <h2 class="section-title">Using AI Responsibly</h2>
@@ -1279,7 +1325,7 @@
   </section>
 
   <!-- ═══ TAB 5: AI AT PENN ═══ -->
-  <section class="tab-pane" id="ai-at-penn">
+  <section class="tab-pane" id="ai-at-penn" role="tabpanel" aria-labelledby="tab-btn-ai-at-penn" tabindex="0">
 
     <p class="section-label">From the Lab</p>
     <h2 class="section-title">The AI Teaching Lab</h2>
@@ -1542,7 +1588,8 @@
 <div class="search-overlay" id="search-overlay" aria-hidden="true">
   <div class="search-modal" role="dialog" aria-modal="true" aria-label="Site search">
     <div class="search-input-wrap">
-      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+      <label for="search-input" class="visually-hidden">Search the AI Resources site</label>
       <input type="text" class="search-input" id="search-input" placeholder="Search the AI Resources site&hellip;" autocomplete="off" spellcheck="false" />
     </div>
     <div class="search-results" id="search-results">
@@ -1558,7 +1605,7 @@
 
 <!-- SITE FOOTER -->
 <footer class="site-footer">
-  &copy; 2026 The Trustees of the University of Pennsylvania &middot; Licensed under <a href="license.html" style="color:inherit; text-decoration:underline;">CC BY 4.0</a> &middot; Maintained by <strong>R. Polk Wagner</strong> &middot; Last updated May 9, 2026
+  &copy; 2026 The Trustees of the University of Pennsylvania &middot; Licensed under <a href="license.html" style="color:inherit; text-decoration:underline;">CC BY 4.0</a> &middot; Maintained by <strong>R. Polk Wagner</strong> &middot; <a href="https://accessibility.web-resources.upenn.edu/get-help" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline;">Report Accessibility Issues and Get Help</a> &middot; Last updated May 9, 2026
 </footer>
 
 <script>
@@ -1566,11 +1613,20 @@
   const panes = document.querySelectorAll('.tab-pane');
 
   function activateTab(target) {
-    tabs.forEach(t => t.classList.remove('active'));
+    tabs.forEach(t => {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+      t.setAttribute('tabindex', '-1');
+    });
     panes.forEach(p => p.classList.remove('active'));
     const btn = document.querySelector(`.tab-btn[data-tab="${target}"]`);
-    if (btn) btn.classList.add('active');
-    document.getElementById(target).classList.add('active');
+    if (btn) {
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      btn.setAttribute('tabindex', '0');
+    }
+    const pane = document.getElementById(target);
+    if (pane) pane.classList.add('active');
   }
 
   tabs.forEach(btn => {
