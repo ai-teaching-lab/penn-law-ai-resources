@@ -286,6 +286,26 @@
     font-family: 'DM Sans', sans-serif;
     letter-spacing: -0.02em;
   }
+  /* Brand-logo variant of card-icon: white-bordered box holding an SVG/PNG logo */
+  .card-icon-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: white;
+    border: 1px solid var(--border);
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+  }
+  .card-icon-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+  }
 
   .card h3 {
     font-family: 'EB Garamond', serif;
@@ -701,7 +721,7 @@
     <div class="card-grid">
 
       <div class="card">
-        <div class="card-icon" style="background:#E8F5E9; color:#10A37F;">GPT</div>
+        <div class="card-icon-logo"><img src="assets/logos/openai.png" alt="" /></div>
         <h3>ChatGPT EDU</h3>
         <p>OpenAI's GPT models via Penn's institutional agreement &mdash; data protections built in. All 1Ls have accounts, plus Littleton Fellows and 1L TAs. Faculty and staff can request access &mdash; email <a href="mailto:ITShelp@law.upenn.edu" style="color:var(--navy);">ITShelp@law.upenn.edu</a>.</p>
         <div class="card-meta">
@@ -711,7 +731,7 @@
       </div>
 
       <div class="card">
-        <div class="card-icon" style="background:#FDF0E6; color:#CC785C; font-size:16px;">✦</div>
+        <div class="card-icon-logo"><img src="assets/logos/claude.png" alt="" /></div>
         <h3>Claude</h3>
         <p>Anthropic's AI assistant &mdash; strong at writing, analysis, long documents, and coding. Available to faculty using your research account &mdash; contact me for details at <a href="mailto:pwagner@law.upenn.edu" style="color:var(--navy);">pwagner@law.upenn.edu</a>.</p>
         <div class="card-meta">
@@ -720,7 +740,7 @@
       </div>
 
       <div class="card">
-        <div class="card-icon" style="background:#E8F0FE; color:#4285F4; font-size:16px;">✦</div>
+        <div class="card-icon-logo"><img src="assets/logos/gemini.png" alt="" /></div>
         <h3>Google Gemini</h3>
         <p>Google's AI model &mdash; strong at research, multimodal tasks (images, video, code), and integration with Google Workspace. Available at <a href="https://gemini.google.com/" target="_blank" rel="noopener" style="color:var(--navy);">gemini.google.com</a> with a Google account; paid tiers for advanced models.</p>
         <div class="card-meta">
@@ -736,7 +756,7 @@
     <div class="card-grid">
 
       <div class="card">
-        <div class="card-icon" style="background:#EDE7F6; color:#7B61FF;">Co</div>
+        <div class="card-icon-logo"><img src="assets/logos/copilot.png" alt="" /></div>
         <h3>Microsoft Copilot</h3>
         <p>Microsoft's AI assistant, integrated with the Office 365 apps you already use &mdash; Word, Outlook, Teams, Excel. Available through your Penn Carey Law O365 account.</p>
         <div class="card-meta">
@@ -753,7 +773,7 @@
     <div class="card-grid">
 
       <div class="card">
-        <div class="card-icon" style="background:#E8EBF3; color:var(--navy);">H</div>
+        <div class="card-icon-logo"><img src="assets/logos/harvey.png" alt="" /></div>
         <h3>Harvey</h3>
         <p>Legal-specific AI for research, drafting, and analysis. Enterprise agreement with Penn Law &mdash; your data is not used for training. All upper-level students, full-time faculty, and staff have access. Log in with your LawKey username.</p>
         <div class="card-meta">
@@ -763,7 +783,7 @@
       </div>
 
       <div class="card">
-        <div class="card-icon" style="background:#FBEAEA; color:#B71234;">W</div>
+        <div class="card-icon-logo"><img src="assets/logos/westlaw.png" alt="" /></div>
         <h3>Westlaw AI-Assisted Research</h3>
         <p>AI features built into Westlaw &mdash; natural language search, case analysis, and document review. Available through the law school's existing Westlaw subscription.</p>
         <div class="card-meta">
@@ -772,7 +792,7 @@
       </div>
 
       <div class="card">
-        <div class="card-icon" style="background:#E3F2FD; color:#0033A0;">L+</div>
+        <div class="card-icon-logo"><img src="assets/logos/lexis.png" alt="" /></div>
         <h3>Lexis+ AI</h3>
         <p>LexisNexis's AI-powered legal research assistant &mdash; conversational search, document drafting, and summarization. Available through the law school's existing Lexis subscription.</p>
         <div class="card-meta">
