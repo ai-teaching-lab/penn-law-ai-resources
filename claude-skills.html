@@ -37,7 +37,7 @@
   .lab-stripe {
     background: #FAF3DD;
     border-bottom: 1px solid #E8DEB9;
-    padding: 0.5rem 2.8vw;
+    padding: 0.7rem 2.8vw;
     flex-shrink: 0;
   }
   .lab-stripe-link {
@@ -45,16 +45,17 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.25rem;
     text-decoration: none;
     color: #5A607A;
   }
-  .lab-stripe-logo { height: 28px; width: auto; flex-shrink: 0; }
+  .lab-stripe-logo { height: 56px; width: auto; flex-shrink: 0; }
   .lab-stripe-text {
     flex: 1;
     font-size: clamp(11px, 0.85vw, 13px);
     line-height: 1.4;
   }
+  .lab-stripe-text strong { color: var(--navy); font-weight: 600; }
   .lab-stripe-cta {
     font-size: clamp(10px, 0.7vw, 11px);
     font-weight: 700;
@@ -281,8 +282,8 @@
 <!-- TOP STRIPE: AI Teaching Lab attribution -->
 <div class="lab-stripe">
   <a class="lab-stripe-link" href="https://ai-teaching-lab.org/" target="_blank" rel="noopener">
-    <img class="lab-stripe-logo" src="assets/ai-teaching-lab-heading.svg" alt="AI Teaching Lab" />
-    <span class="lab-stripe-text">Research, tools, and teaching on AI in legal education and practice.</span>
+    <img class="lab-stripe-logo" src="assets/ai-teaching-lab-stacked.svg" alt="AI Teaching Lab" />
+    <span class="lab-stripe-text">A project of the <strong>AI Teaching Lab</strong> at Penn Carey Law &mdash; research, tools, and teaching on AI in legal education and practice.</span>
     <span class="lab-stripe-cta">Visit the Lab &rarr;</span>
   </a>
 </div>
