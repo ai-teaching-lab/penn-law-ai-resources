@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safe Use of Agentic AI Tools — Penn Carey Law AI Resources</title>
+<meta name="description" content="Working guidance for faculty use of Claude Code, Claude Cowork, Microsoft Copilot Cowork, and similar agentic AI tools at Penn Carey Law.">
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #011F5B;
+    --navy-mid: #0a2f78;
+    --red: #990000;
+    --red-soft: #FFF2F2;
+    --red-border: #E8C5C5;
+    --cream: #FAF8F3;
+    --warm-gray: #F2EFE8;
+    --mid-gray: #6B6863;
+    --dark-gray: #3A3630;
+    --border: #D8D4CC;
+    --gold: #B8960C;
+    --gold-light: #F5EFD0;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark-gray);
+    font-size: 15.5px;
+    line-height: 1.7;
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--navy);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  .site-header a:focus-visible,
+  .site-footer a:focus-visible {
+    outline-color: white;
+    outline-offset: 3px;
+  }
+
+  /* ── LAB STRIPE ── */
+  .lab-stripe {
+    background: #FAF3DD;
+    border-bottom: 1px solid #E8DEB9;
+    padding: 0.9rem 3rem;
+  }
+  .lab-stripe-link {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    text-decoration: none;
+    color: var(--dark-gray);
+  }
+  .lab-stripe-logo { height: 72px; width: auto; flex-shrink: 0; }
+  .lab-stripe-text {
+    flex: 1;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .lab-stripe-text strong { color: var(--navy); font-weight: 600; }
+  .lab-stripe-cta {
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #822024;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .lab-stripe-link:hover .lab-stripe-cta { text-decoration: underline; }
+
+  /* ── SITE HEADER ── */
+  .site-header {
+    background: var(--navy);
+    color: white;
+    padding: 0.9rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+  }
+  .wordmark {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: white;
+    text-decoration: none;
+  }
+  .wordmark span {
+    color: rgba(255,255,255,0.55);
+    margin: 0 0.4rem;
+    font-weight: 400;
+  }
+  .back-link {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 3px;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .back-link:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.45);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--warm-gray);
+    border-bottom: 1px solid var(--border);
+    padding: 3.5rem 3rem 2.8rem;
+  }
+  .hero-inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .hero-kicker {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.9rem;
+  }
+  .hero h1 {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: clamp(2rem, 4vw, 2.9rem);
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.9rem;
+  }
+  .hero h1 em { color: var(--red); font-style: italic; }
+  .hero-sub {
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--dark-gray);
+    margin-bottom: 1.5rem;
+    max-width: 640px;
+  }
+  .hero-meta {
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+  }
+
+  /* ── ARTICLE ── */
+  .article {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 3rem 3rem 4rem;
+  }
+  .article h2 {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.55rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin: 2.6rem 0 0.9rem;
+    letter-spacing: -0.005em;
+    line-height: 1.25;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .article h2:first-child { margin-top: 0; }
+  .article h2 .roman {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: var(--gold);
+    vertical-align: middle;
+    margin-right: 0.7rem;
+    padding: 2px 8px;
+    background: var(--gold-light);
+    border-radius: 2px;
+    position: relative;
+    top: -2px;
+  }
+  .article h3 {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--navy-mid);
+    margin: 1.8rem 0 0.5rem;
+    line-height: 1.3;
+    font-style: italic;
+  }
+  .article p {
+    margin-bottom: 1.05rem;
+    color: var(--dark-gray);
+  }
+  .article strong { color: var(--navy); font-weight: 600; }
+  .article em { font-style: italic; }
+  .article a {
+    color: var(--navy);
+    text-decoration: underline;
+    text-decoration-color: var(--red);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+  }
+  .article a:hover { color: var(--red); }
+  .article code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.9em;
+    background: var(--warm-gray);
+    padding: 1px 6px;
+    border-radius: 3px;
+    color: var(--navy);
+    border: 1px solid var(--border);
+  }
+  .article ol, .article ul {
+    margin: 0.5rem 0 1.2rem 1.6rem;
+    padding: 0;
+  }
+  .article li {
+    margin-bottom: 0.55rem;
+    padding-left: 0.35rem;
+  }
+  .article li > ul, .article li > ol {
+    margin-top: 0.55rem;
+    margin-bottom: 0.6rem;
+  }
+  .article ol li::marker { color: var(--red); font-weight: 600; }
+  .article ul li::marker { color: var(--gold); }
+
+  /* ── CALLOUTS ── */
+  .callout-warn {
+    margin: 1.5rem 0;
+    padding: 1.2rem 1.4rem;
+    background: var(--red-soft);
+    border-left: 3px solid var(--red);
+    border-radius: 2px;
+  }
+  .callout-warn-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.5rem;
+  }
+  .callout-warn p { margin-bottom: 0.6rem; }
+  .callout-warn p:last-child { margin-bottom: 0; }
+
+  .disclaimer {
+    margin: 0 0 2rem 0;
+    padding: 1rem 1.2rem;
+    background: var(--warm-gray);
+    border-left: 3px solid var(--mid-gray);
+    border-radius: 2px;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--mid-gray);
+    line-height: 1.6;
+  }
+  .disclaimer strong { font-style: normal; color: var(--navy); font-weight: 600; }
+
+  .callout-key {
+    margin: 1.5rem 0;
+    padding: 1.2rem 1.4rem;
+    background: white;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: 2px;
+    font-size: 14.5px;
+  }
+  .callout-key-title {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+
+  /* Quick reference list */
+  .quick-ref {
+    margin: 0.5rem 0 1.2rem;
+    padding: 0;
+    list-style: none;
+  }
+  .quick-ref li {
+    padding: 0.55rem 0 0.55rem 1.8rem;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    margin: 0;
+  }
+  .quick-ref li::before {
+    content: "✓";
+    position: absolute;
+    left: 0.3rem;
+    color: var(--gold);
+    font-weight: 700;
+  }
+  .quick-ref li:last-child { border-bottom: none; }
+
+  /* Help list */
+  .help-list {
+    margin: 0.5rem 0;
+    padding: 0;
+    list-style: none;
+  }
+  .help-list li {
+    padding: 0.45rem 0;
+    border-bottom: 1px dotted var(--border);
+    margin: 0;
+  }
+  .help-list li:last-child { border-bottom: none; }
+  .help-list strong { display: inline-block; min-width: 220px; }
+
+  /* Companion callout */
+  .companion {
+    margin-top: 3rem;
+    padding: 1.5rem 1.7rem;
+    background: white;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--navy);
+    border-radius: 2px;
+  }
+  .companion-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+    margin-bottom: 0.4rem;
+  }
+  .companion-title {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+  .companion-title a { color: inherit; text-decoration: none; }
+  .companion-title a:hover { color: var(--red); }
+  .companion-body { font-size: 14.5px; color: var(--dark-gray); }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.85);
+    padding: 1.5rem 3rem;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .site-footer a { color: white; text-decoration: underline; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 720px) {
+    .lab-stripe, .site-header, .hero, .article, .site-footer { padding-left: 1.4rem; padding-right: 1.4rem; }
+    .lab-stripe-text { display: none; }
+    .lab-stripe-logo { height: 52px; }
+    .hero { padding-top: 2.4rem; padding-bottom: 2rem; }
+    .article { padding-top: 2rem; padding-bottom: 3rem; }
+    .article h2 { font-size: 1.35rem; }
+    .help-list strong { display: block; min-width: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LAB STRIPE -->
+<div class="lab-stripe">
+  <a class="lab-stripe-link" href="https://ai-teaching-lab.org/" target="_blank" rel="noopener">
+    <img class="lab-stripe-logo" src="assets/ai-teaching-lab-stacked.svg" alt="AI Teaching Lab" />
+    <span class="lab-stripe-text">A project of the <strong>AI Teaching Lab</strong> at Penn Carey Law &mdash; research, tools, and teaching on AI in legal education and practice.</span>
+    <span class="lab-stripe-cta">Visit the Lab &rarr;</span>
+  </a>
+</div>
+
+<!-- SITE HEADER -->
+<header class="site-header">
+  <a class="wordmark" href="index.html">Penn Carey Law <span>|</span> AI Resources</a>
+  <a class="back-link" href="index.html">&larr; Back to portal</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-kicker">Faculty Working Notes</div>
+    <h1>Safe Use of <em>Agentic AI</em> Tools</h1>
+    <p class="hero-sub">Working guidance for faculty use of Claude Code, Claude Cowork, Microsoft Copilot Cowork, and similar agentic tools at Penn Carey Law.</p>
+    <div class="hero-meta">Last updated May 13, 2026</div>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<main class="article">
+
+  <div class="disclaimer">
+    Practical recommendations from <strong>Polk Wagner</strong> for faculty use of agentic AI tools. These are working guidelines, not university policy &mdash; <strong>Penn ISC</strong>, <strong>Penn Law ITS</strong>, the <strong>Privacy Office</strong>, and the <strong>Office of General Counsel</strong> hold formal authority over data handling and tool approval. Where the two disagree, the official sources control.
+  </div>
+
+  <h2><span class="roman">I</span>What&rsquo;s different about agentic AI</h2>
+  <p>Unlike chat tools, agentic AI reads files, runs commands, and acts on your behalf &mdash; often in sequences you don&rsquo;t individually approve. You set the boundary up front (what folder, what permissions, what connectors), not in the moment. Faculty should think carefully about that setup before each session. For background on the distinction, see the companion <a href="agentic-ai-overview.html">Understanding Agentic AI</a> document.</p>
+
+  <h2><span class="roman">II</span>Account setup</h2>
+  <ol>
+    <li><strong>Use paid, professional tiers only.</strong> Free consumer AI tools generally offer weaker data-handling protections than paid tiers &mdash; depending on the vendor, they may retain inputs longer, use them to train future models, or expose fewer privacy controls. Terms vary and change. For any Penn work &mdash; including drafts, research, communications, and anything touching confidential material &mdash; use a paid subscription (Claude Pro, Max, Team, or Enterprise; ChatGPT Plus, Pro, Business, or Enterprise; or equivalent). For most individual faculty use, Claude Pro or ChatGPT Plus is sufficient. Free tiers are not appropriate for school work. Note that there is no Penn-managed AI account at present; faculty subscribe individually.</li>
+    <li>Keep your professional AI account separate from any personal one, and use the professional account for Penn work.</li>
+    <li>Enable two-factor authentication.</li>
+    <li>Don&rsquo;t share AI logins across faculty, staff, or research assistants &mdash; each person should have their own account.</li>
+  </ol>
+
+  <h3>A note on API keys</h3>
+  <p>Most faculty will sign in to Claude tools using their normal account login. Some uses &mdash; particularly setting up Claude Code in certain configurations, connecting Claude to a third-party tool, or following a technical tutorial &mdash; will instead ask for an &ldquo;API key.&rdquo; An API key is a long string of letters and numbers (typically starting with <code>sk-ant-...</code>) that lets software use Claude on your behalf and bills it to your account. A few things to know:</p>
+  <ul>
+    <li><strong>It&rsquo;s a credential, not a setting.</strong> Anyone who has your API key can run unlimited Claude queries on your bill and, in some configurations, see what you&rsquo;re doing. Treat it like a password.</li>
+    <li><strong>Don&rsquo;t paste it into shared documents, email, Slack, or AI chats.</strong> Store it in a password manager or your operating system&rsquo;s keychain.</li>
+    <li><strong>Don&rsquo;t commit it to a Git repository or share a screen showing it.</strong> If you suspect a key has been exposed, revoke it in your Claude account settings and generate a new one.</li>
+    <li><strong>If you&rsquo;re not sure whether a tool needs one, you probably don&rsquo;t need to generate one yet.</strong> Stick to standard login until a specific tool requires it.</li>
+  </ul>
+
+  <h2><span class="roman">III</span>Working directory hygiene</h2>
+  <div class="callout-key">
+    <div class="callout-key-title">This is the most important practice.</div>
+    Set up a clean working folder before you run any agentic tool, and keep confidential material out of it.
+  </div>
+  <ol>
+    <li><strong>Create a dedicated working folder for AI sessions</strong> (e.g., <code>~/ai-workspace/</code>). Don&rsquo;t run agentic tools from your home directory or Desktop.</li>
+    <li><strong>Only put files in that folder that you&rsquo;re comfortable with the agent reading.</strong> Agents will read what&rsquo;s there.</li>
+    <li><strong>Never run agents in folders containing confidential material</strong>, including:
+      <ul>
+        <li>Identifiable student records of any kind</li>
+        <li>Peer review, tenure, or appointments committee materials</li>
+        <li>Clinical case files or privileged communications</li>
+        <li>Embargoed drafts from colleagues</li>
+      </ul>
+    </li>
+    <li><strong>De-identify before you analyze.</strong> If you need AI help with student data, remove or hash identifiers first.</li>
+    <li><strong>Keep work under version control or backup</strong> (git, Dropbox, Time Machine) so an agent mistake is recoverable.</li>
+  </ol>
+
+  <h2><span class="roman">IV</span>Permissions</h2>
+  <ol>
+    <li>Leave per-action approval prompts enabled. Resist &ldquo;approve all,&rdquo; &ldquo;auto-accept,&rdquo; or &ldquo;do not ask again&rdquo; modes when the session touches anything sensitive &mdash; most agentic tools have a version of this under different names.</li>
+    <li>Read proposed bash commands before approving &mdash; particularly <code>rm</code>, <code>mv</code>, network calls, and anything touching your home directory.</li>
+    <li>Be especially cautious with deletion and overwriting.</li>
+  </ol>
+
+  <h2><span class="roman">V</span>Connectors (MCP, Gmail, Drive, Calendar, etc.)</h2>
+  <ol>
+    <li>Each connector expands what the agent can see and do. Enable only what you&rsquo;re actively using.</li>
+    <li>Audit connected services periodically and disconnect the ones you&rsquo;ve stopped using.</li>
+    <li>Only install third-party MCP servers from sources you&rsquo;d trust to read your files.</li>
+    <li>Email and calendar connectors deserve extra caution (see &sect;VII).</li>
+  </ol>
+
+  <h2><span class="roman">VI</span>Student records and other confidential data</h2>
+  <p>Penn&rsquo;s data-classification framework applies to agentic AI tools &mdash; and Penn ISC and Penn Law ITS have reviewed specific AI tools for use with each data tier. For the current tool-to-tier mapping, see the <a href="index.html#policies">Policies tab of the AI Resources portal</a>. When in doubt about whether a particular agentic use is appropriate, ask the Registrar, the Office of Student Services, or the Privacy Office <em>before</em> the session, not after. The default for identifiable student data and other confidential material is: don&rsquo;t send it to a third-party AI service that hasn&rsquo;t been reviewed for that tier.</p>
+
+  <h2><span class="roman">VII</span>Prompt injection</h2>
+  <p>A risk most faculty haven&rsquo;t encountered. Malicious instructions can be hidden in documents, emails, or web pages that an agent reads &mdash; the agent treats them as commands from you. Realistic examples:</p>
+  <ul>
+    <li>A PDF that instructs the agent to write a favorable evaluation</li>
+    <li>An email that instructs a Gmail-connected agent to forward messages to an outside address</li>
+    <li>A web page that instructs the agent to exfiltrate clipboard contents</li>
+  </ul>
+  <div class="callout-warn">
+    <div class="callout-warn-title">Defense</div>
+    <p>Be skeptical when an agent&rsquo;s behavior changes after it reads external content. Keep sensitive tool permissions (send, delete, network) gated behind explicit approval. Don&rsquo;t auto-approve actions taken after the agent reads anything from outside.</p>
+  </div>
+
+  <h2><span class="roman">VIII</span>Human in the loop</h2>
+  <ol>
+    <li>Read what the agent produces before sending, submitting, or filing it.</li>
+    <li>Verify factual claims and citations independently.</li>
+    <li>Faculty should always be the last step before any external communication or formal action.</li>
+  </ol>
+
+  <h2><span class="roman">IX</span>If something goes wrong</h2>
+  <div class="callout-warn">
+    <p>If sensitive data was sent inappropriately, or an agent took an unintended action affecting confidential material: <strong>stop the session, preserve the session log, and contact Penn Law ITS</strong> (and the Privacy Office or General Counsel as appropriate) promptly.</p>
+  </div>
+
+  <h2><span class="roman">X</span>Quick reference</h2>
+  <ul class="quick-ref">
+    <li>Use paid AI subscriptions; free tiers are not appropriate for Penn work</li>
+    <li>Use a dedicated working folder; never run agents in folders with confidential material</li>
+    <li>Keep approvals on for sensitive work</li>
+    <li>De-identify student data before analysis</li>
+    <li>Enable only the connectors you actually need</li>
+    <li>Read agent output before sending or submitting anything</li>
+    <li>Ask before, not after, when in doubt</li>
+  </ul>
+
+  <h2><span class="roman">XI</span>Where to get help</h2>
+  <ul class="help-list">
+    <li><strong>Penn Law ITS</strong> &mdash; technical setup and incidents</li>
+    <li><strong>Registrar / Office of Student Services</strong> &mdash; student records questions</li>
+    <li><strong>Privacy Office / General Counsel</strong> &mdash; compliance questions</li>
+    <li><strong>Polk Wagner</strong> &mdash; tool-specific questions and feedback on these guidelines (<a href="mailto:pwagner@law.upenn.edu">pwagner@law.upenn.edu</a>)</li>
+  </ul>
+
+  <!-- Companion callout -->
+  <div class="companion">
+    <div class="companion-label">Companion document</div>
+    <div class="companion-title"><a href="agentic-ai-overview.html">Understanding Agentic AI &rarr;</a></div>
+    <div class="companion-body">A brief orientation for faculty on agentic AI versus chatbot tools &mdash; recommended reading before this guide if you&rsquo;re new to agentic tools.</div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  &copy; 2026 The Trustees of the University of Pennsylvania &middot; Licensed under <a href="license.html">CC BY 4.0</a> &middot; Maintained by <strong>R. Polk Wagner</strong> &middot; <a href="index.html">Back to AI Resources</a>
+</footer>
+
+</body>
+</html>
