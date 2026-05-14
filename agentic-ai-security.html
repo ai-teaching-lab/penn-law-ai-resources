@@ -455,6 +455,7 @@
   </ol>
 
   <h2><span class="roman">IV</span>Permissions</h2>
+  <p>In agentic tools, &ldquo;permissions&rdquo; are the rules that decide which actions the agent can take on its own and which require your explicit approval &mdash; running a shell command, modifying a file, sending a message, calling an external service. Most agentic tools prompt you per action by default, but most also let you relax those prompts to keep sessions moving. The settings are a real tradeoff: tight permissions mean more interruptions; loose permissions mean real risk if the agent makes a wrong call. The defaults are usually right; the practices below are about resisting the temptation to relax them.</p>
   <ol>
     <li>Leave per-action approval prompts enabled. Resist &ldquo;approve all,&rdquo; &ldquo;auto-accept,&rdquo; or &ldquo;do not ask again&rdquo; modes when the session touches anything sensitive &mdash; most agentic tools have a version of this under different names.</li>
     <li>Read proposed bash commands before approving &mdash; particularly <code>rm</code>, <code>mv</code>, network calls, and anything touching your home directory.</li>
