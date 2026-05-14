@@ -1024,7 +1024,7 @@
     <h1>AI <em>Resources</em></h1>
     <p class="hero-sub">A guide to the AI tools and resources available to Penn Law faculty and staff &mdash; what we have, how to use them, and what to keep in mind.</p>
     <div class="hero-meta">
-      <div>Last updated May 13, 2026</div>
+      <div>Last updated May 14, 2026</div>
     </div>
   </div>
 </section>
@@ -1035,7 +1035,7 @@
     <div class="hero-feature-text">
       <span class="hero-feature-kicker">New &middot; What faculty should know</span>
       <h2 id="hero-feature-heading"><em>Agentic AI</em> is here &mdash; and it works differently</h2>
-      <p class="hero-feature-lede">Tools like <strong>Claude Code</strong>, <strong>Claude Cowork</strong>, and <strong>Microsoft Copilot Cowork</strong> don&rsquo;t just answer questions &mdash; they work on your behalf, taking multiple steps until the task is done. The safety setup matters before you start, not after.</p>
+      <p class="hero-feature-lede">Tools like <strong>Claude Code</strong>, <strong>OpenAI Codex</strong>, <strong>Gemini CLI</strong>, and <strong>Claude Cowork</strong> don&rsquo;t just answer questions &mdash; they work on your behalf, taking multiple steps until the task is done. The safety setup matters before you start, not after.</p>
       <div class="hero-feature-tabhint">
         Full content in the <a href="#" onclick="activateTab('agentic-ai'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;">Agentic AI tab &rarr;</a>
       </div>
@@ -1067,7 +1067,7 @@
     <h3>Agentic AI</h3>
     <ul>
       <li><strong>What&rsquo;s different</strong></li>
-      <li><strong>Tools</strong> &mdash; Claude Code, the Cowork family</li>
+      <li><strong>Tools</strong> &mdash; Claude Code, Codex, Gemini CLI, Claude Cowork</li>
       <li><strong>Working safely</strong></li>
     </ul>
   </div>
@@ -1274,11 +1274,11 @@
 
     <p class="section-label">What faculty should know</p>
     <h2 class="section-title"><em>Agentic</em> AI: tools that do, not just describe</h2>
-    <p class="section-intro">Most AI tools faculty have used so far are <strong>chat AI</strong> &mdash; you type, they respond. <strong>Agentic AI</strong> is different: you give it a goal and it works toward that goal across many steps, reading files, running commands, searching the web, and modifying documents until the task is done. Claude Code, Claude Cowork, and Microsoft Copilot Cowork are purpose-built for this. The same underlying models power them, but the tools can <em>do</em> things, not just describe them.</p>
+    <p class="section-intro">Most AI tools faculty have used so far are <strong>chat AI</strong> &mdash; you type, they respond. <strong>Agentic AI</strong> is different: you give it a goal and it works toward that goal across many steps, reading files, running commands, searching the web, and modifying documents until the task is done. Claude Code, OpenAI Codex, Gemini CLI, and Claude Cowork are purpose-built for this. The same underlying models power them, but the tools can <em>do</em> things, not just describe them.</p>
 
     <div class="callout">
       <h3>Start here</h3>
-      <p style="margin-bottom: 1.1rem;">Two short companion documents lay out what every faculty member using agentic AI should know &mdash; an orientation to the conceptual shift, and a practical security guide for working with Claude Code, the Cowork family, and similar tools.</p>
+      <p style="margin-bottom: 1.1rem;">Two short companion documents lay out what every faculty member using agentic AI should know &mdash; an orientation to the conceptual shift, and a practical security guide for working with Claude Code, OpenAI Codex, Gemini CLI, Claude Cowork, and similar tools.</p>
       <div class="callout-doc-cards">
         <a class="callout-doc-card" href="agentic-ai-overview.html">
           <div class="callout-doc-card-kicker">Orientation</div>
@@ -1332,9 +1332,23 @@
       </div>
 
       <div class="card">
+        <span class="resource-tag tag-tool" style="margin-bottom:0.75rem;">Coding &amp; Files</span>
+        <h3>OpenAI Codex</h3>
+        <p>OpenAI&rsquo;s agentic coding tool, available as a terminal CLI, desktop app (Windows and macOS), and inside ChatGPT&rsquo;s web app. Reads your repository, edits files, runs tests, and iterates &mdash; the same shape as Claude Code, from a different vendor. Install via <code>npm i -g @openai/codex</code> or Homebrew. Requires a paid ChatGPT subscription.</p>
+        <a class="card-link" href="https://openai.com/codex/" target="_blank" rel="noopener">OpenAI Codex overview</a>
+      </div>
+
+      <div class="card">
+        <span class="resource-tag tag-tool" style="margin-bottom:0.75rem;">Coding &amp; Files</span>
+        <h3>Gemini CLI</h3>
+        <p>Google&rsquo;s open-source agentic CLI (Apache 2.0). Brings Gemini directly into the terminal with built-in tools, MCP support, and a generous free personal tier (1,000 requests/day). The same engine powers <em>agent mode</em> in Gemini Code Assist for VS Code.</p>
+        <a class="card-link" href="https://github.com/google-gemini/gemini-cli" target="_blank" rel="noopener">Gemini CLI on GitHub</a>
+      </div>
+
+      <div class="card">
         <span class="resource-tag tag-tool" style="margin-bottom:0.75rem;">Email &amp; Calendar</span>
-        <h3>Claude Cowork &amp; Microsoft Copilot Cowork</h3>
-        <p>Two products in the same family of agents that connect to your inbox, calendar, and productivity apps to triage email, draft replies, schedule meetings, and handle recurring administrative work. <strong>Anthropic&rsquo;s Claude Cowork</strong> launched in early 2026; <strong>Microsoft&rsquo;s Copilot Cowork</strong> is built on Anthropic&rsquo;s technology and ships as part of Microsoft 365 E7. Penn Carey Law does not currently provide a managed account for either; faculty subscribing individually should review data-handling terms carefully before connecting Penn accounts.</p>
+        <h3>Claude Cowork</h3>
+        <p>Anthropic&rsquo;s agent that connects to your inbox, calendar, and productivity apps to triage email, draft replies, schedule meetings, and handle recurring administrative work. Launched in early 2026. Penn Carey Law does not currently provide a managed account; faculty subscribing individually should review data-handling terms carefully before connecting Penn accounts.</p>
       </div>
 
       <div class="card">
@@ -1616,7 +1630,7 @@
 
     <div class="prose-section">
 
-      <p>Agentic AI tools &mdash; Claude Code, the Cowork family (Anthropic&rsquo;s Claude Cowork and Microsoft&rsquo;s Copilot Cowork), and the agentic features inside Claude and ChatGPT &mdash; introduce risks the data-classification framework above doesn&rsquo;t fully cover. They read files on their own, take action on your behalf, and can be misdirected by content they read from external sources. The data-classification rules still apply, but the operational practices that protect Penn data look different.</p>
+      <p>Agentic AI tools &mdash; Claude Code, OpenAI Codex, Gemini CLI, Claude Cowork, and the agentic features inside Claude and ChatGPT &mdash; introduce risks the data-classification framework above doesn&rsquo;t fully cover. They read files on their own, take action on your behalf, and can be misdirected by content they read from external sources. The data-classification rules still apply, but the operational practices that protect Penn data look different.</p>
 
       <p>Full treatment is in the dedicated <a href="#" onclick="activateTab('agentic-ai'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;" style="color:var(--navy); text-decoration:underline;">Agentic AI tab</a> and in the standalone security guide:</p>
 
@@ -1959,7 +1973,7 @@
 
 <!-- SITE FOOTER -->
 <footer class="site-footer">
-  &copy; 2026 The Trustees of the University of Pennsylvania &middot; Licensed under <a href="license.html" style="color:inherit; text-decoration:underline;">CC BY 4.0</a> &middot; Maintained by <strong>R. Polk Wagner</strong> &middot; <a href="https://accessibility.web-resources.upenn.edu/get-help" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline;">Report Accessibility Issues and Get Help</a> &middot; Last updated May 13, 2026
+  &copy; 2026 The Trustees of the University of Pennsylvania &middot; Licensed under <a href="license.html" style="color:inherit; text-decoration:underline;">CC BY 4.0</a> &middot; Maintained by <strong>R. Polk Wagner</strong> &middot; <a href="https://accessibility.web-resources.upenn.edu/get-help" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline;">Report Accessibility Issues and Get Help</a> &middot; Last updated May 14, 2026
 </footer>
 
 <script>
