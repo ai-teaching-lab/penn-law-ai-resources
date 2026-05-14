@@ -1037,12 +1037,9 @@
       <span class="hero-feature-kicker">New &middot; What faculty should know</span>
       <h2 id="hero-feature-heading"><em>Agentic AI</em> is here &mdash; and it works differently</h2>
       <p class="hero-feature-lede">Tools like <strong>Claude Code</strong>, <strong>OpenAI Codex</strong>, <strong>Gemini CLI</strong>, and <strong>Claude Cowork</strong> don&rsquo;t just answer questions &mdash; they work on your behalf, taking multiple steps until the task is done. The safety setup matters before you start, not after.</p>
-      <div class="hero-feature-tabhint">
-        Full content in the <a href="#" onclick="activateTab('agentic-ai'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;">Agentic AI tab &rarr;</a>
-      </div>
     </div>
     <div class="hero-feature-ctas">
-      <a class="hero-feature-cta primary" href="agentic-ai-overview.html">
+      <a class="hero-feature-cta primary" href="#" onclick="activateTab('agentic-ai'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;">
         <span><span class="cta-label">Orientation</span>Understanding Agentic AI</span>
         <span class="cta-arrow">&rarr;</span>
       </a>
@@ -1277,23 +1274,6 @@
     <h2 class="section-title"><em>Agentic</em> AI: tools that do, not just describe</h2>
     <p class="section-intro">Most AI tools faculty have used so far are <strong>chat AI</strong> &mdash; you type, they respond. <strong>Agentic AI</strong> is different: you give it a goal and it works toward that goal across many steps, reading files, running commands, searching the web, and modifying documents until the task is done. Claude Code, OpenAI Codex, Gemini CLI, and Claude Cowork are purpose-built for this. The same underlying models power them, but the tools can <em>do</em> things, not just describe them.</p>
 
-    <div class="callout">
-      <h3>Start here</h3>
-      <p style="margin-bottom: 1.1rem;">Two short companion documents lay out what every faculty member using agentic AI should know &mdash; an orientation to the conceptual shift, and a practical security guide for working with Claude Code, OpenAI Codex, Gemini CLI, Claude Cowork, and similar tools.</p>
-      <div class="callout-doc-cards">
-        <a class="callout-doc-card" href="agentic-ai-overview.html">
-          <div class="callout-doc-card-kicker">Orientation</div>
-          <div class="callout-doc-card-title">Understanding Agentic AI &rarr;</div>
-          <div class="callout-doc-card-body">A brief orientation on agentic vs. chat AI &mdash; what changes, why it matters, and when to reach for which.</div>
-        </a>
-        <a class="callout-doc-card" href="agentic-ai-security.html">
-          <div class="callout-doc-card-kicker">Security</div>
-          <div class="callout-doc-card-title">Safe Use of Agentic AI Tools &rarr;</div>
-          <div class="callout-doc-card-body">Account setup, working-directory hygiene, permissions, connectors, prompt injection, and what to do if something goes wrong.</div>
-        </a>
-      </div>
-    </div>
-
     <div class="divider"></div>
 
     <p class="section-label">The shift</p>
@@ -1313,8 +1293,38 @@
 
     <div class="callout-gold callout">
       <h3>A useful analogy</h3>
-      <p>Chat AI is like a research assistant who answers questions when you walk over to their desk. <strong>Agentic AI is like a research assistant you hand a project to, with keys to your office and your filing cabinet, while you step out for the afternoon.</strong></p>
-      <p style="margin-top: 0.6rem;">Both are useful. Both have appropriate uses. But the second one requires you to think carefully &mdash; beforehand &mdash; about which keys you hand over.</p>
+      <p style="margin-bottom: 0.7rem;"><strong>Chat AI</strong> is like a research assistant who answers questions when you walk over to their desk.</p>
+      <p><strong>Agentic AI</strong> is like a research assistant you hand a project to, with keys to your office and your filing cabinet, while you step out for the afternoon.</p>
+      <p style="margin-top: 0.7rem;">Both are useful. Both have appropriate uses. But the second one requires you to think carefully &mdash; beforehand &mdash; about which keys you hand over.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="section-label">Implications</p>
+    <h2 class="section-title">Why the difference matters</h2>
+
+    <div class="prose-section">
+
+      <ul>
+        <li><strong>Speed and scope.</strong> Agents can do in minutes what would take hours of clicking and typing. The flip side is that they can also do damage in minutes.</li>
+        <li><strong>Reviewability.</strong> Chat outputs are text you can read. Agentic outputs are actions: files changed, messages sent, calendar invites accepted. Reviewing what an agent did is more involved than reviewing what a chatbot wrote.</li>
+        <li><strong>Trust setup.</strong> With chat, you decide each turn what to share. With an agent, the agent decides what to read within whatever scope you&rsquo;ve granted. That makes the initial setup &mdash; folder, permissions, connectors &mdash; far more consequential than what you paste into any single chat.</li>
+        <li><strong>Reversibility of errors.</strong> Chat errors are wrong answers you can ignore. Agent errors are wrong actions &mdash; a deleted file, a misdirected email, an inappropriately scheduled task. Some are easy to undo; some are not.</li>
+      </ul>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="section-label">Practical choice</p>
+    <h2 class="section-title">When to reach for which</h2>
+
+    <div class="prose-section">
+
+      <p><strong>Chat AI</strong> suits drafts, summaries, explanations, brainstorming, and questions where the input fits in a message and the output is text you&rsquo;ll review.</p>
+      <p><strong>Agentic AI</strong> suits tasks that span many files, require chained steps, or involve making changes rather than describing them &mdash; particularly repetitive or well-defined work.</p>
+      <p style="margin-top: 1.2rem;"><em>A note on terminology:</em> &ldquo;Agent,&rdquo; &ldquo;assistant,&rdquo; &ldquo;copilot,&rdquo; and &ldquo;AI tool&rdquo; are used loosely and inconsistently across products. The distinction that matters isn&rsquo;t the label &mdash; it&rsquo;s whether the tool can take action on your behalf without each step being explicitly approved. If it can, treat it as agentic, and apply the cautions in the security guide.</p>
+
     </div>
 
     <div class="divider"></div>
