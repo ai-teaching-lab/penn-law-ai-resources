@@ -304,7 +304,7 @@
   /* ── HERO ── */
   .hero {
     background: var(--navy);
-    padding: 5rem 3rem 4.5rem;
+    padding: 1.9rem 3rem 1.6rem;
     position: relative;
     overflow: hidden;
   }
@@ -327,11 +327,11 @@
   }
   .hero h1 {
     font-family: 'EB Garamond', serif;
-    font-size: clamp(2.4rem, 5vw, 3.75rem);
+    font-size: clamp(1.9rem, 4vw, 2.7rem);
     font-weight: 500;
     line-height: 1.1;
     color: white;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.55rem;
     letter-spacing: -0.01em;
   }
   .hero h1 em {
@@ -343,8 +343,8 @@
     font-weight: 300;
     color: rgba(255,255,255,0.65);
     max-width: 580px;
-    line-height: 1.7;
-    margin-bottom: 2.5rem;
+    line-height: 1.55;
+    margin-bottom: 0.9rem;
   }
   .hero-meta {
     font-size: 11px;
@@ -1027,10 +1027,7 @@
   <div class="hero-inner">
     <h1>AI <em>Resources</em></h1>
     <p class="hero-sub">A guide to the AI tools and resources available across Penn Law &mdash; what we have, how to use them, and what to keep in mind.</p>
-    <div class="hero-meta">
-      <div>Last updated July 2026</div>
-      <div>For staff guidance, see <a href="https://www.law.upenn.edu/its/docs/ai/" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline;">Penn Law ITS</a></div>
-    </div>
+    <div class="hero-meta">Last updated July 2026 &nbsp;&middot;&nbsp; For staff guidance, see <a href="https://www.law.upenn.edu/its/docs/ai/" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline;">Penn Law ITS</a></div>
   </div>
 </section>
 
@@ -1065,20 +1062,20 @@
       <li><strong>What AI can do</strong></li>
     </ul>
   </div>
+  <div class="overview-col" data-nav="use-cases">
+    <h3>Use Cases &amp; Tips</h3>
+    <ul>
+      <li><strong>Best practices</strong> &mdash; match the tool to your task</li>
+      <li><strong>Prompting fundamentals</strong></li>
+      <li><strong>Patterns that work</strong></li>
+    </ul>
+  </div>
   <div class="overview-col" data-nav="agentic-ai">
     <h3>Agentic AI</h3>
     <ul>
       <li><strong>What&rsquo;s different</strong></li>
       <li><strong>Tools</strong> &mdash; Claude Code, Codex, Gemini CLI, Claude Cowork</li>
       <li><strong>Working safely</strong></li>
-    </ul>
-  </div>
-  <div class="overview-col" data-nav="use-cases">
-    <h3>Use Cases &amp; Tips</h3>
-    <ul>
-      <li><strong>Prompting fundamentals</strong></li>
-      <li><strong>Use cases</strong> &mdash; research, drafting, data, teaching</li>
-      <li><strong>Patterns that work</strong></li>
     </ul>
   </div>
   <div class="overview-col" data-nav="tools">
@@ -1113,8 +1110,8 @@
   <nav class="tab-nav" role="tablist" aria-label="Resource sections">
     <!-- TODO 2027: retire tab-btn-featured once the 2026–27 lineup is no longer "new". -->
     <button class="tab-btn tab-btn-featured active" data-tab="getting-started" role="tab" id="tab-btn-getting-started" aria-selected="true" aria-controls="getting-started">Getting Started</button>
-    <button class="tab-btn" data-tab="agentic-ai" role="tab" id="tab-btn-agentic-ai" aria-selected="false" aria-controls="agentic-ai" tabindex="-1">Agentic AI</button>
     <button class="tab-btn" data-tab="use-cases" role="tab" id="tab-btn-use-cases" aria-selected="false" aria-controls="use-cases" tabindex="-1">Use Cases &amp; Tips</button>
+    <button class="tab-btn" data-tab="agentic-ai" role="tab" id="tab-btn-agentic-ai" aria-selected="false" aria-controls="agentic-ai" tabindex="-1">Agentic AI</button>
     <button class="tab-btn" data-tab="tools" role="tab" id="tab-btn-tools" aria-selected="false" aria-controls="tools" tabindex="-1">Tools &amp; Setup</button>
     <button class="tab-btn" data-tab="policies" role="tab" id="tab-btn-policies" aria-selected="false" aria-controls="policies" tabindex="-1">Policies &amp; Guidelines</button>
     <button class="tab-btn" data-tab="ai-at-penn" role="tab" id="tab-btn-ai-at-penn" aria-selected="false" aria-controls="ai-at-penn" tabindex="-1">AI at Penn</button>
@@ -1129,7 +1126,7 @@
 
     <p class="section-label">Getting Started</p>
     <h2 class="section-title">AI Tools at Penn Law</h2>
-    <p class="section-intro">The Penn Law community has access to several AI platforms. Here's what's available for 2026&ndash;27.</p>
+    <p class="section-intro">The Penn Law community has access to several AI platforms. Here's what's available for 2026&ndash;27. Click on each tool for more details on access.</p>
 
     <style>
       .access-wrap { overflow-x: auto; margin: 0 0 0.75rem; }
@@ -1453,14 +1450,14 @@
 
       <div class="card">
         <span class="resource-tag tag-tool" style="margin-bottom:0.75rem;">Coding &amp; Files</span>
-        <h3>Claude Code</h3>
+        <h3 id="card-ag-claude-code">Claude Code</h3>
         <p>Anthropic&rsquo;s agentic coding tool, available in your terminal, IDE, desktop app, or browser. Reads and edits files, runs shell commands, executes scripts, and orchestrates multi-step tasks on your computer. Widely used for coding but equally useful for document workflows, data analysis, and any task that touches files. Requires a paid Claude subscription. At Penn Law, faculty can use it via a research account.</p>
         <a class="card-link" href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener">Claude Code overview &amp; installation</a>
       </div>
 
       <div class="card">
         <span class="resource-tag tag-tool" style="margin-bottom:0.75rem;">Coding &amp; Files</span>
-        <h3>OpenAI Codex</h3>
+        <h3 id="card-ag-codex">OpenAI Codex</h3>
         <p>OpenAI&rsquo;s agentic coding tool, available as a terminal CLI, desktop app (Windows and macOS), and inside ChatGPT&rsquo;s web app. Reads your repository, edits files, runs tests, and iterates &mdash; the same shape as Claude Code, from a different vendor. Install via <code>npm i -g @openai/codex</code> or Homebrew. <strong>Requires a personal ChatGPT Plus, Pro, Business, or Enterprise subscription &mdash; Penn&rsquo;s ChatGPT EDU deployment does not currently include Codex.</strong></p>
         <a class="card-link" href="https://openai.com/codex/" target="_blank" rel="noopener">OpenAI Codex overview</a>
       </div>
@@ -1534,6 +1531,60 @@
   <!-- ═══ TAB 3: USE CASES & TIPS ═══ -->
   <section class="tab-pane" id="use-cases" role="tabpanel" aria-labelledby="tab-btn-use-cases" tabindex="0">
 
+    <p class="section-label">Best Practices</p>
+    <h2 class="section-title">How do you want to work with AI?</h2>
+    <p class="section-intro">What you&rsquo;re doing with AI shapes which tools fit &mdash; three modes of working, from everyday chat to building your own tools. Most people start with the first and grow into the others. (For teaching-specific tools and guides, see the <a href="https://polkwagner.github.io/penn-law-pedagogy-resources/" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Pedagogy Resources portal</a>.)</p>
+
+    <div style="border-left:4px solid var(--navy); background:var(--cream); border-radius:0 10px 10px 0; padding:1.4rem 1.75rem; margin-bottom:1.4rem;">
+      <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:0.4rem;">
+        <span style="font-size:10.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:#fff; background:var(--navy); padding:0.22rem 0.65rem; border-radius:999px;">Everyday AI</span>
+        <h3 style="margin:0; font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); font-weight:500;">Chat, draft, summarize &mdash; no setup, no learning curve</h3>
+      </div>
+      <p style="font-size:12px; color:var(--mid-gray); text-transform:uppercase; letter-spacing:0.05em; margin:0 0 0.7rem;"><strong style="color:var(--navy);">Recommended Tools:</strong> <span style="color:var(--gold);">&#9733;</span> <a href="#card-pennchat" onclick="return goToCard('getting-started','card-pennchat');" style="color:var(--navy); text-decoration:underline;">PennChat</a> &middot; <a href="#card-copilot" onclick="return goToCard('getting-started','card-copilot');" style="color:var(--navy); text-decoration:underline;">Microsoft Copilot</a></p>
+      <p style="margin:0 0 0.7rem;">You work entirely in a chat window: type a question or paste in some text, get an answer, copy what you need &mdash; no setup beyond logging in. PennChat is the safe default for Penn work, since it&rsquo;s cleared for most University data.</p>
+      <ul style="margin:0;">
+        <li>Draft and polish emails, memos, and announcements</li>
+        <li>Summarize a long document, report, or email thread</li>
+        <li>Brainstorm ideas or an outline when you&rsquo;re staring at a blank page</li>
+        <li>Explain an unfamiliar concept or area of law in plain terms</li>
+        <li>Rewrite text to change its tone, length, or audience</li>
+      </ul>
+    </div>
+
+    <div style="border-left:4px solid var(--gold); background:var(--cream); border-radius:0 10px 10px 0; padding:1.4rem 1.75rem; margin-bottom:1.4rem;">
+      <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:0.4rem;">
+        <span style="font-size:10.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:#fff; background:var(--gold); padding:0.22rem 0.65rem; border-radius:999px;">Working with AI</span>
+        <h3 style="margin:0; font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); font-weight:500;">Bring your own documents; steer, iterate, and build custom assistants</h3>
+      </div>
+      <p style="font-size:12px; color:var(--mid-gray); text-transform:uppercase; letter-spacing:0.05em; margin:0 0 0.7rem;"><strong style="color:var(--navy);">Recommended Tools:</strong> <span style="color:var(--gold);">&#9733;</span> <a href="#card-claude-cowork" onclick="return goToCard('getting-started','card-claude-cowork');" style="color:var(--navy); text-decoration:underline;">Claude Cowork</a> &middot; <a href="#card-claude" onclick="return goToCard('getting-started','card-claude');" style="color:var(--navy); text-decoration:underline;">Claude.ai</a></p>
+      <p style="margin:0 0 0.7rem;">You&rsquo;re comfortable in a chat and ready to bring your own documents and repeatable workflows into it &mdash; Claude Projects and knowledge files, custom skills and plugins, and an app-based agent that can read across your files.</p>
+      <ul style="margin:0;">
+        <li>Build a <strong>Claude Project</strong> around your own materials (a course, a committee, a research area) and ask questions grounded in them</li>
+        <li>Extend Claude with a <strong>skill</strong> &mdash; a reusable set of instructions that teaches it a specific task, like generating exam questions or drafting in your voice</li>
+        <li>Add a <strong>plugin</strong> to connect Claude to an outside tool or data source and pull it into the conversation</li>
+        <li>Hand <strong>Cowork</strong> a folder of documents and have it summarize, compare, or extract across all of them</li>
+        <li>Run a multi-step research task &mdash; gather, synthesize, and draft in one thread &mdash; or work directly with uploaded spreadsheets, PDFs, and slide decks</li>
+      </ul>
+    </div>
+
+    <div style="border-left:4px solid var(--red); background:var(--cream); border-radius:0 10px 10px 0; padding:1.4rem 1.75rem; margin-bottom:1.4rem;">
+      <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:0.4rem;">
+        <span style="font-size:10.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:#fff; background:var(--red); padding:0.22rem 0.65rem; border-radius:999px;">Building with AI</span>
+        <h3 style="margin:0; font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); font-weight:500;">Agentic tools that run multi-step work across your files and code</h3>
+      </div>
+      <p style="font-size:12px; color:var(--mid-gray); text-transform:uppercase; letter-spacing:0.05em; margin:0 0 0.7rem;"><strong style="color:var(--navy);">Recommended Tools:</strong> <span style="color:var(--gold);">&#9733;</span> <a href="#card-ag-claude-code" onclick="return goToCard('agentic-ai','card-ag-claude-code');" style="color:var(--navy); text-decoration:underline;">Claude Code</a> &middot; <a href="#card-ag-codex" onclick="return goToCard('agentic-ai','card-ag-codex');" style="color:var(--navy); text-decoration:underline;">OpenAI Codex</a></p>
+      <p style="margin:0 0 0.7rem;">You want AI that acts on your behalf &mdash; reading files, running steps, and automating work you&rsquo;d otherwise repeat by hand. It&rsquo;s a bigger setup and a steeper learning curve; the <a href="#" onclick="activateTab('agentic-ai'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;" style="color:var(--navy); text-decoration:underline;">Agentic AI tab</a> has the tools and safe-use guidance.</p>
+      <ul style="margin:0;">
+        <li>Run the <a href="https://github.com/polkwagner/law-faculty-skills" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Law Faculty Skills</a> &mdash; class prep, exam generation, slide review, document production &mdash; from a single command</li>
+        <li>Automate a batch task: grade a stack against a rubric, convert a casebook to clean text, or process a set of files</li>
+        <li>Build your own skills for workflows you repeat</li>
+        <li>Connect external tools and data through MCP</li>
+        <li>Let an agent carry a multi-step task end to end, with your review at each step</li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
     <p class="section-label">Use Cases &amp; Tips</p>
     <h2 class="section-title">Getting Better Results</h2>
 
@@ -1560,52 +1611,6 @@
 
     <div class="divider"></div>
 
-    <p class="section-label">Use Cases</p>
-    <h2 class="section-title">What Can You Do With AI?</h2>
-
-    <div class="card-grid">
-
-      <div class="card">
-        <div class="card-icon icon-blue">🔍</div>
-        <h3>Research &amp; Analysis</h3>
-        <p>Summarize long documents, explore unfamiliar areas of law, find patterns in data, get up to speed on a topic quickly. Works best when you can verify the output.</p>
-        <div class="card-meta">
-          <span class="resource-tag tag-usecase">Use Case</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-icon icon-gold">✍</div>
-        <h3>Drafting &amp; Writing</h3>
-        <p>Draft emails, memos, reports, recommendation letters, grant applications, committee documents. Give it your existing text to revise, or describe what you need and iterate.</p>
-        <div class="card-meta">
-          <span class="resource-tag tag-usecase">Use Case</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-icon icon-green">📊</div>
-        <h3>Data &amp; Administration</h3>
-        <p>Analyze survey results, clean up spreadsheets, prepare meeting agendas, summarize long email threads, draft routine communications.</p>
-        <div class="card-meta">
-          <span class="resource-tag tag-usecase">Use Case</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-icon icon-red">🎓</div>
-        <h3>Teaching</h3>
-        <p>AI tools for the classroom &mdash; syllabus language, exam generation, virtual TAs, and more. We have a full set of guides on the pedagogy portal.</p>
-        <div class="card-meta">
-          <span class="resource-tag tag-usecase">Use Case</span>
-        </div>
-        <a class="card-link" href="https://polkwagner.github.io/penn-law-pedagogy-resources/" target="_blank" rel="noopener">Visit Pedagogy Resources</a>
-      </div>
-
-    </div>
-
-    <div class="divider"></div>
-
     <div class="callout-gold callout">
       <h3>Patterns That Work</h3>
       <p>A few specific approaches I come back to again and again:</p>
@@ -1620,16 +1625,8 @@
 
     <div class="divider"></div>
 
-    <p class="section-label">From the Lab</p>
-    <h2 class="section-title">AI for Assessment</h2>
-
-    <div class="card-grid">
-      <div class="card">
-        <span class="resource-tag tag-tool" style="margin-bottom:0.75rem;">AI Teaching Lab</span>
-        <h3>Exam Grader</h3>
-        <p>The Lab&rsquo;s calibration-based grading tool for law-school essay exams. Instead of working from a generic rubric, it learns your standards from a set of exams you&rsquo;ve already scored, then grades the rest of the stack &mdash; and it shows its work, surfacing the score, the reasoning, and the rubric points it credited. It&rsquo;s in active build now, grading in parallel with me on my Spring 2026 Intellectual Property final to measure how closely it tracks my own scoring.</p>
-        <a class="card-link" href="https://ai-teaching-lab.org/projects/exam-grader/" target="_blank" rel="noopener">View the project</a>
-      </div>
+    <div class="prose-section">
+      <p><strong>From the Lab:</strong> the AI Teaching Lab builds tools for many of these workflows &mdash; exam grading, question generation, custom casebooks, a course-bound virtual TA, and more. See <a href="#" onclick="activateTab('ai-at-penn'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;" style="color:var(--navy); text-decoration:underline;">what the Lab has built &rarr;</a></p>
     </div>
 
   </section>
@@ -1879,6 +1876,117 @@
       <p style="margin-top: 1.25rem;">
         <a href="https://ai-teaching-lab.org/toolkit/resource-menu/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.92); text-decoration:underline; font-weight:500;">View the full AI Teaching Lab Resource Menu &rarr;</a>
       </p>
+    </div>
+
+    <h3 style="font-family:'EB Garamond',serif; font-size:1.35rem; color:var(--navy); margin-bottom:0.5rem; font-weight:500; margin-top:2.5rem;">Projects &amp; Tools from the Lab</h3>
+    <p style="font-size:14px; color:var(--mid-gray); margin-bottom:1.25rem; max-width:640px; line-height:1.65;">A selection of what the Lab has built &mdash; open-source tools you can use today (start with the Law Faculty Skills) and projects in active development. The full catalog is at <a href="https://ai-teaching-lab.org/projects/" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">ai-teaching-lab.org</a>.</p>
+
+    <div class="card-grid">
+
+
+      <div class="card">
+        <span class="resource-tag tag-tool" style="margin-bottom:0.75rem;">Skills</span>
+        <h3>Law Faculty Skills</h3>
+        <p>Open-source AI skills for teaching, assessment, and document work &mdash; MCQ &amp; essay generation, class prep, lecture-slide review, memo/document/email drafting, markdown &amp; PDF conversion, plus Eddie (editorial review) and Rex (critical review). Built on the open agentskills spec; run them in Claude Code, Gemini CLI, or ChatGPT.</p>
+        <a class="card-link" href="https://github.com/polkwagner/law-faculty-skills" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+
+
+      <div class="card">
+        <span class="resource-tag tag-tool" style="margin-bottom:0.75rem;">Virtual TA</span>
+        <h3>Heron</h3>
+        <p>A course-bound virtual TA &mdash; a RAG chatbot that answers students in Slack from a course's assigned readings, with citations. Deployable for any course; supports Claude, GPT, and Gemini.</p>
+        <a class="card-link" href="https://github.com/polkwagner/course-bot" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+
+
+      <div class="card">
+        <span class="resource-tag tag-tool" style="margin-bottom:0.75rem;">Assessment</span>
+        <h3>Exam Grader</h3>
+        <p>Calibration-based AI grading of law-school essay exams &mdash; it scores against a faculty-graded calibration set rather than in a vacuum.</p>
+        <a class="card-link" href="https://ai-teaching-lab.org/projects/exam-grader/" target="_blank" rel="noopener">View project</a>
+      </div>
+
+
+      <div class="card">
+        <span class="resource-tag tag-tool" style="margin-bottom:0.75rem;">Research</span>
+        <h3>Exam Taker</h3>
+        <p>The AI Final Exam Project &mdash; can current AI pass real Penn Carey Law finals when graded blind, on the curve, by the faculty who wrote them?</p>
+        <a class="card-link" href="https://ai-teaching-lab.org/projects/exam-taker/" target="_blank" rel="noopener">View project</a>
+      </div>
+
+
+      <div class="card">
+        <span class="resource-tag tag-tool" style="margin-bottom:0.75rem;">Assessment</span>
+        <h3>Essay Creator</h3>
+        <p>Generate assessment-grade essay exams &mdash; issue-spotters and fact patterns &mdash; with rubrics built for AI-assisted grading.</p>
+        <a class="card-link" href="https://ai-teaching-lab.org/projects/essay-creator/" target="_blank" rel="noopener">View project</a>
+      </div>
+
+
+      <div class="card">
+        <span class="resource-tag tag-tool" style="margin-bottom:0.75rem;">Assessment</span>
+        <h3>MCQ Creator</h3>
+        <p>Generate law-school multiple-choice questions with built-in distractor validation and psychometric quality controls.</p>
+        <a class="card-link" href="https://ai-teaching-lab.org/projects/mcq-creator/" target="_blank" rel="noopener">View project</a>
+      </div>
+
+
+      <div class="card">
+        <span class="resource-tag tag-tool" style="margin-bottom:0.75rem;">Teaching</span>
+        <h3>Casebook Builder</h3>
+        <p>Curate and edit cases into custom course casebooks at a fraction of commercial cost. Faculty pilots in Torts, Patents, and Legislation.</p>
+        <a class="card-link" href="https://ai-teaching-lab.org/projects/casebook-builder/" target="_blank" rel="noopener">View project</a>
+      </div>
+
+
+      <div class="card">
+        <span class="resource-tag tag-tool" style="margin-bottom:0.75rem;">Teaching</span>
+        <h3>Course Materials</h3>
+        <p>An extraction primitive &mdash; turn messy course artifacts (PDFs, slides, casebook excerpts, syllabi) into clean structured text for downstream tools.</p>
+        <a class="card-link" href="https://ai-teaching-lab.org/projects/course-materials/" target="_blank" rel="noopener">View project</a>
+      </div>
+
+
+      <div class="card">
+        <span class="resource-tag tag-tool" style="margin-bottom:0.75rem;">Teaching</span>
+        <h3>Class Simulations</h3>
+        <p>AI-driven simulations built around the actual class problems students work each week &mdash; starting with patent law.</p>
+        <a class="card-link" href="https://ai-teaching-lab.org/projects/class-simulations/" target="_blank" rel="noopener">View project</a>
+      </div>
+
+
+      <div class="card">
+        <span class="resource-tag tag-tool" style="margin-bottom:0.75rem;">Judiciary</span>
+        <h3>Teaching the Bench</h3>
+        <p>The Lab's research partnership with the federal judiciary and the Delaware Court of Chancery on the practical use of AI in chambers.</p>
+        <a class="card-link" href="https://ai-teaching-lab.org/projects/judiciary/" target="_blank" rel="noopener">View project</a>
+      </div>
+
+
+      <div class="card">
+        <span class="resource-tag tag-tool" style="margin-bottom:0.75rem;">Training</span>
+        <h3>Training Materials</h3>
+        <p>A complete AI-training package for legal-education audiences &mdash; with a cross-Penn version in the works.</p>
+        <a class="card-link" href="https://ai-teaching-lab.org/projects/training-materials/" target="_blank" rel="noopener">View project</a>
+      </div>
+
+
+      <div class="card">
+        <span class="resource-tag tag-tool" style="margin-bottom:0.75rem;">Newsletter</span>
+        <h3>Newsletter Automation</h3>
+        <p>The pipeline behind the Lab's monthly AI Updates newsletter &mdash; automated collection, editorial workflow, and Substack distribution.</p>
+        <a class="card-link" href="https://ai-teaching-lab.org/projects/newsletter-automation/" target="_blank" rel="noopener">View project</a>
+      </div>
+
+
+      <div class="card">
+        <span class="resource-tag tag-tool" style="margin-bottom:0.75rem;">Shipped</span>
+        <h3>Legal Education at Model Velocity</h3>
+        <p>A four-module microsite on legal education in the AI era &mdash; with a cloned-voice podcast, a NotebookLM audio overview, and PDF summaries.</p>
+        <a class="card-link" href="https://ai-teaching-lab.org/projects/legal-education-velocity/" target="_blank" rel="noopener">View project</a>
+      </div>
+
     </div>
 
     <div class="prose-section" style="margin-bottom: 2.5rem;">
@@ -2190,6 +2298,15 @@
     }
     const pane = document.getElementById(target);
     if (pane) pane.classList.add('active');
+  }
+
+  // Switch to a tab and scroll to a specific card (used by the recommended-tool links)
+  function goToCard(tab, cardId) {
+    activateTab(tab);
+    const el = cardId && document.getElementById(cardId);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    else window.scrollTo({ top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior: 'smooth' });
+    return false;
   }
 
   tabs.forEach(btn => {
