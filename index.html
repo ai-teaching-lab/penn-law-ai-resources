@@ -391,6 +391,7 @@
   .tab-btn.active {
     color: var(--navy);
     border-bottom-color: var(--navy);
+    background: #DBE4F5;
   }
   .tab-btn-featured {
     position: relative;
@@ -450,13 +451,13 @@
   /* ── RESOURCE CARDS ── */
   .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.25rem;
     margin-bottom: 3rem;
   }
   .card {
-    background: white;
-    border: 1px solid var(--border);
+    background: var(--warm-gray);
+    border: 1px solid #C4BEAF;
     border-radius: 8px;
     padding: 1.5rem;
     transition: border-color 0.2s, transform 0.2s;
@@ -556,6 +557,11 @@
   }
   .tag-faq     { background: #EBF1FB; color: #0a2f78; }
   .tag-slides  { background: var(--gold-light); color: #5A4700; }
+  .tag-recommended { background: var(--gold-light); color: #5A4700; border: 1px solid var(--gold); }
+  .mode-badge { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; padding: 3px 9px; border-radius: 999px; }
+  .mode-everyday { background: var(--navy); }
+  .mode-working  { background: var(--gold); }
+  .mode-building { background: var(--red); }
   .tag-memo    { background: #FBEAEA; color: #7A0000; }
   .tag-notes   { background: #EAF4E8; color: #1E6B1A; }
   .tag-guide   { background: #F0EBF7; color: #4A2D7A; }
@@ -652,6 +658,7 @@
   }
   @media (max-width: 720px) {
     .callout-doc-cards { grid-template-columns: 1fr; }
+    .card-grid { grid-template-columns: 1fr; }
   }
 
   .callout-gold {
@@ -943,6 +950,11 @@
     border-color: var(--navy);
     box-shadow: 0 0 0 1px var(--navy);
   }
+  .overview-col.active {
+    background: #DBE4F5;
+    border-color: var(--navy);
+    box-shadow: inset 0 0 0 1px var(--navy);
+  }
   .overview-col h3 {
     font-family: 'EB Garamond', serif;
     font-size: 0.98rem;
@@ -1055,7 +1067,7 @@
 
 <!-- OVERVIEW MAP -->
 <div class="overview-map">
-  <div class="overview-col featured" data-nav="getting-started">
+  <div class="overview-col active" data-nav="getting-started">
     <h3>Getting Started</h3>
     <ul>
       <li><strong>AI tools at Penn Law</strong> &mdash; the 2026&ndash;27 lineup</li>
@@ -1076,14 +1088,15 @@
     <ul>
       <li><strong>What&rsquo;s different</strong></li>
       <li><strong>Tools</strong> &mdash; Claude Code, Codex, Gemini CLI, Claude Cowork</li>
+      <li><strong>Model APIs</strong> &mdash; incl. the Penn LLM Gateway</li>
       <li><strong>Working safely</strong></li>
     </ul>
   </div>
   <div class="overview-col" data-nav="tools">
-    <h3>Tools &amp; Setup</h3>
+    <h3>Advanced Claude</h3>
     <ul>
       <li><strong>Claude Code deep dive</strong> &mdash; CLAUDE.md, skills, MCP</li>
-      <li><strong>Model APIs</strong> &mdash; Anthropic, OpenAI, other models</li>
+      <li><strong>Across two computers</strong> &mdash; home &amp; office setup</li>
       <li><strong>Claude Code skills</strong> &mdash; 6 faculty tools</li>
     </ul>
   </div>
@@ -1113,7 +1126,7 @@
     <button class="tab-btn tab-btn-featured active" data-tab="getting-started" role="tab" id="tab-btn-getting-started" aria-selected="true" aria-controls="getting-started">Getting Started</button>
     <button class="tab-btn" data-tab="use-cases" role="tab" id="tab-btn-use-cases" aria-selected="false" aria-controls="use-cases" tabindex="-1">Use Cases &amp; Tips</button>
     <button class="tab-btn" data-tab="agentic-ai" role="tab" id="tab-btn-agentic-ai" aria-selected="false" aria-controls="agentic-ai" tabindex="-1">Agentic AI</button>
-    <button class="tab-btn" data-tab="tools" role="tab" id="tab-btn-tools" aria-selected="false" aria-controls="tools" tabindex="-1">Tools &amp; Setup</button>
+    <button class="tab-btn" data-tab="tools" role="tab" id="tab-btn-tools" aria-selected="false" aria-controls="tools" tabindex="-1">Advanced Claude</button>
     <button class="tab-btn" data-tab="policies" role="tab" id="tab-btn-policies" aria-selected="false" aria-controls="policies" tabindex="-1">Policies &amp; Guidelines</button>
     <button class="tab-btn" data-tab="ai-at-penn" role="tab" id="tab-btn-ai-at-penn" aria-selected="false" aria-controls="ai-at-penn" tabindex="-1">AI at Penn</button>
   </nav>
@@ -1169,12 +1182,11 @@
       <div class="card">
         <div class="card-icon-logo"><img src="assets/logos/penn.png" alt="" /></div>
         <h3 id="card-pennchat">PennChat</h3>
+        <div style="display:flex; flex-wrap:wrap; gap:0.3rem; align-items:center; margin:0.1rem 0 0.6rem;"><span style="font-size:11px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--gold); white-space:nowrap;">&#9733; Recommended for:</span><span class="mode-badge mode-everyday">Everyday AI</span></div>
         <p>Penn's AI portal, hosted inside Penn's secure network, bringing multiple models together &mdash; currently Anthropic's Claude and OpenAI's ChatGPT &mdash; in one chat interface. Approved for most High-risk data (not SSNs or credit-card data). Now available as a pilot through mid-August, then a full enterprise launch with a credit-based usage system. Note: Requires connection to PennNet / AirPennNet or the GlobalProtect VPN.</p>
-        <div class="card-meta">
-          <span class="resource-tag tag-tool">General-Purpose</span>
-        </div>
 <div class="card-links" style="margin-top:0.9rem; padding-top:0.7rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:0.35rem 1.1rem;">
           <a class="card-link" style="margin-top:0;" href="https://pennchat.upenn.edu" target="_blank" rel="noopener">Open PennChat</a>
+          <a class="card-link" style="margin-top:0;" href="#pennchat-models" onclick="return goToCard('use-cases','pennchat-models');">Which model to use</a>
           <a class="card-link" style="margin-top:0;" href="https://isc.upenn.edu/resources/pennchat-pilot-FAQs" target="_blank" rel="noopener">PennChat FAQ</a>
           <a class="card-link" style="margin-top:0;" href="#" onclick="activateTab('policies'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;">Data classification</a>
         </div>
@@ -1183,10 +1195,8 @@
       <div class="card">
         <div class="card-icon-logo"><img src="assets/logos/claude.png" alt="" /></div>
         <h3 id="card-claude">Claude.ai</h3>
+        <div style="display:flex; flex-wrap:wrap; gap:0.3rem; align-items:center; margin:0.1rem 0 0.6rem;"><span style="font-size:11px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--gold); white-space:nowrap;">&#9733; Recommended for:</span><span class="mode-badge mode-everyday">Everyday AI</span><span class="mode-badge mode-working">Working with AI</span></div>
         <p>Anthropic's AI assistant &mdash; leading models, quite strong at writing, analysis, long documents, and coding. Faculty can obtain licenses via your research account; a University-wide Claude agreement is expected by August. For 2026&ndash;27, 1Ls will receive Claude.ai (and, likely, Claude Code), integrated into the 1L Legal Practice Skills curriculum.</p>
-        <div class="card-meta">
-          <span class="resource-tag tag-tool">General-Purpose</span>
-        </div>
 <div class="card-links" style="margin-top:0.9rem; padding-top:0.7rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:0.35rem 1.1rem;">
           <a class="card-link" style="margin-top:0;" href="https://claude.ai" target="_blank" rel="noopener">Open Claude</a>
           <a class="card-link" style="margin-top:0;" href="#" onclick="activateTab('agentic-ai'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;">Agentic Claude tools</a>
@@ -1197,9 +1207,6 @@
         <div class="card-icon-logo"><img src="assets/logos/openai.png" alt="" /></div>
         <h3 id="card-chatgpt">ChatGPT EDU</h3>
         <p>OpenAI's GPT models via Penn's institutional agreement &mdash; approved for Moderate-risk data. Available to faculty and staff via research or departmental budgets. Note that Penn&rsquo;s ChatGPT EDU deployment does not currently enable Codex or OpenAI API access; for OpenAI&rsquo;s agentic tools, you need a personal Plus/Pro/Business/Enterprise subscription.</p>
-        <div class="card-meta">
-          <span class="resource-tag tag-tool">General-Purpose</span>
-        </div>
 <div class="card-links" style="margin-top:0.9rem; padding-top:0.7rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:0.35rem 1.1rem;">
           <a class="card-link" style="margin-top:0;" href="https://chatgpt.com" target="_blank" rel="noopener">Open ChatGPT</a>
           <a class="card-link" style="margin-top:0;" href="https://www.law.upenn.edu/its/docs/ai/chat-gpt/" target="_blank" rel="noopener">Penn Law ITS guide</a>
@@ -1210,9 +1217,6 @@
         <div class="card-icon-logo"><img src="assets/logos/gemini.png" alt="" /></div>
         <h3 id="card-gemini">Google Gemini</h3>
         <p>Google's AI model &mdash; strong at research, multimodal tasks (images, video, code), and integration with Google Workspace. Available with a Google account; paid tiers for advanced models. Not a Penn-provided tool &mdash; use a (paid) personal account. Faculty can use research accounts.</p>
-        <div class="card-meta">
-          <span class="resource-tag tag-tool">General-Purpose</span>
-        </div>
 <div class="card-links" style="margin-top:0.9rem; padding-top:0.7rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:0.35rem 1.1rem;">
           <a class="card-link" style="margin-top:0;" href="https://gemini.google.com" target="_blank" rel="noopener">Open Gemini</a>
           <a class="card-link" style="margin-top:0;" href="#" onclick="activateTab('agentic-ai'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;">Gemini CLI (agentic)</a>
@@ -1228,29 +1232,25 @@
 
       <div class="card">
         <div class="card-icon-logo"><img src="assets/logos/claude.png" alt="" /></div>
-        <h3 id="card-claude-code">Claude Code</h3>
-        <p>Anthropic's agentic command-line tool &mdash; works in your terminal, IDE, desktop app, or browser. Reads and edits files, runs commands, and orchestrates multi-step tasks. It's the engine behind the Law Faculty Skills. Requires a paid Claude subscription.</p>
-        <div class="card-meta">
-          <span class="resource-tag tag-tool">Agentic</span>
-        </div>
+        <h3 id="card-claude-cowork">Claude Cowork</h3>
+        <div style="display:flex; flex-wrap:wrap; gap:0.3rem; align-items:center; margin:0.1rem 0 0.6rem;"><span style="font-size:11px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--gold); white-space:nowrap;">&#9733; Recommended for:</span><span class="mode-badge mode-working">Working with AI</span><span class="mode-badge mode-building">Building with AI</span></div>
+        <p>Anthropic's app-based agent &mdash; hand it a task (research, drafting, analysis) through the Claude desktop app and it works in the background. A friendlier alternative to the terminal agents. Requires a paid Claude subscription; a limited PCL staff pilot begins in July.</p>
 <div class="card-links" style="margin-top:0.9rem; padding-top:0.7rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:0.35rem 1.1rem;">
-          <a class="card-link" style="margin-top:0;" href="https://claude.com/product/claude-code" target="_blank" rel="noopener">Claude Code</a>
-          <a class="card-link" style="margin-top:0;" href="https://code.claude.com/docs" target="_blank" rel="noopener">Documentation</a>
-          <a class="card-link" style="margin-top:0;" href="#" onclick="activateTab('agentic-ai'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;">Setup &amp; safe use</a>
+          <a class="card-link" style="margin-top:0;" href="https://claude.ai" target="_blank" rel="noopener">Open Claude</a>
+          <a class="card-link" style="margin-top:0;" href="https://support.claude.com/en/articles/14116274-organize-your-tasks-with-projects-in-claude-cowork" target="_blank" rel="noopener">Cowork guide</a>
+          <a class="card-link" style="margin-top:0;" href="#" onclick="activateTab('agentic-ai'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;">More agentic tools</a>
         </div>
       </div>
 
       <div class="card">
         <div class="card-icon-logo"><img src="assets/logos/claude.png" alt="" /></div>
-        <h3 id="card-claude-cowork">Claude Cowork</h3>
-        <p>Anthropic's app-based agent &mdash; hand it a task (research, drafting, analysis) through the Claude desktop app and it works in the background. A friendlier alternative to the terminal agents. Requires a paid Claude subscription; a limited PCL staff pilot begins in July.</p>
-        <div class="card-meta">
-          <span class="resource-tag tag-tool">Agentic</span>
-        </div>
+        <h3 id="card-claude-code">Claude Code</h3>
+        <div style="display:flex; flex-wrap:wrap; gap:0.3rem; align-items:center; margin:0.1rem 0 0.6rem;"><span style="font-size:11px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--gold); white-space:nowrap;">&#9733; Recommended for:</span><span class="mode-badge mode-building">Building with AI</span></div>
+        <p>Anthropic's agentic command-line tool &mdash; works in your terminal, IDE, desktop app, or browser. Reads and edits files, runs commands, and orchestrates multi-step tasks. It's the engine behind the Law Faculty Skills. Requires a paid Claude subscription.</p>
 <div class="card-links" style="margin-top:0.9rem; padding-top:0.7rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:0.35rem 1.1rem;">
-          <a class="card-link" style="margin-top:0;" href="https://claude.ai" target="_blank" rel="noopener">Open Claude</a>
-          <a class="card-link" style="margin-top:0;" href="https://support.claude.com/en/articles/14116274-organize-your-tasks-with-projects-in-claude-cowork" target="_blank" rel="noopener">Cowork guide</a>
-          <a class="card-link" style="margin-top:0;" href="#" onclick="activateTab('agentic-ai'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;">More agentic tools</a>
+          <a class="card-link" style="margin-top:0;" href="https://claude.com/product/claude-code" target="_blank" rel="noopener">Claude Code</a>
+          <a class="card-link" style="margin-top:0;" href="https://code.claude.com/docs" target="_blank" rel="noopener">Documentation</a>
+          <a class="card-link" style="margin-top:0;" href="#" onclick="activateTab('agentic-ai'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;">Setup &amp; safe use</a>
         </div>
       </div>
 
@@ -1265,9 +1265,6 @@
         <div class="card-icon-logo"><img src="assets/logos/harvey.png" alt="" /></div>
         <h3 id="card-harvey">Harvey</h3>
         <p>Legal-specific AI for research, drafting, and analysis. Enterprise agreement with Penn Law &mdash; your data is not used for training. All upper-level students, full-time faculty, and staff have access. Log in with your LawKey username.</p>
-        <div class="card-meta">
-          <span class="resource-tag tag-tool">Legal AI</span>
-        </div>
 <div class="card-links" style="margin-top:0.9rem; padding-top:0.7rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:0.35rem 1.1rem;">
           <a class="card-link" style="margin-top:0;" href="https://app.harvey.ai" target="_blank" rel="noopener">Log in to Harvey</a>
           <a class="card-link" style="margin-top:0;" href="https://www.law.upenn.edu/its/docs/ai/harvey-ai/" target="_blank" rel="noopener">Penn Law ITS guide</a>
@@ -1278,9 +1275,6 @@
         <div class="card-icon-logo"><img src="assets/logos/legora.png" alt="" /></div>
         <h3 id="card-legora">Legora</h3>
         <p>Legal-specific AI comparable to Harvey &mdash; research, drafting, and analysis. Penn Law agreement expected to be finalized around August; access provisioned as needed thereafter.</p>
-        <div class="card-meta">
-          <span class="resource-tag tag-tool">Legal AI</span>
-        </div>
 <div class="card-links" style="margin-top:0.9rem; padding-top:0.7rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:0.35rem 1.1rem;">
           <a class="card-link" style="margin-top:0;" href="https://legora.com" target="_blank" rel="noopener">About Legora</a>
         </div>
@@ -1290,9 +1284,6 @@
         <div class="card-icon-logo"><img src="assets/logos/westlaw.png" alt="" /></div>
         <h3 id="card-westlaw">Westlaw AI-Assisted Research</h3>
         <p>AI features built into Westlaw &mdash; natural language search, case analysis, and document review. Available through the law school's existing Westlaw subscription.</p>
-        <div class="card-meta">
-          <span class="resource-tag tag-tool">Legal AI</span>
-        </div>
 <div class="card-links" style="margin-top:0.9rem; padding-top:0.7rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:0.35rem 1.1rem;">
           <a class="card-link" style="margin-top:0;" href="https://1.next.westlaw.com" target="_blank" rel="noopener">Open Westlaw</a>
         </div>
@@ -1302,9 +1293,6 @@
         <div class="card-icon-logo"><img src="assets/logos/lexis.png" alt="" /></div>
         <h3 id="card-lexis">Lexis+ AI</h3>
         <p>LexisNexis's AI-powered legal research assistant &mdash; conversational search, document drafting, and summarization. Available through the law school's existing Lexis subscription.</p>
-        <div class="card-meta">
-          <span class="resource-tag tag-tool">Legal AI</span>
-        </div>
 <div class="card-links" style="margin-top:0.9rem; padding-top:0.7rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:0.35rem 1.1rem;">
           <a class="card-link" style="margin-top:0;" href="https://plus.lexis.com" target="_blank" rel="noopener">Open Lexis+</a>
         </div>
@@ -1321,9 +1309,6 @@
         <div class="card-icon-logo"><img src="assets/logos/copilot.png" alt="" /></div>
         <h3 id="card-copilot">Microsoft Copilot</h3>
         <p>Microsoft's AI assistant, integrated with the Office 365 apps you already use &mdash; Word, Outlook, Teams, Excel. Available through your Penn Carey Law O365 account.</p>
-        <div class="card-meta">
-          <span class="resource-tag tag-tool">Productivity</span>
-        </div>
 <div class="card-links" style="margin-top:0.9rem; padding-top:0.7rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:0.35rem 1.1rem;">
           <a class="card-link" style="margin-top:0;" href="https://copilot.microsoft.com" target="_blank" rel="noopener">Open Copilot</a>
           <a class="card-link" style="margin-top:0;" href="https://www.law.upenn.edu/its/docs/ai/copilot/" target="_blank" rel="noopener">Penn Law ITS guide</a>
@@ -1334,9 +1319,6 @@
         <div class="card-icon-logo"><img src="assets/logos/zoom.png" alt="" /></div>
         <h3 id="card-zoom">Zoom AI Companion</h3>
         <p>Generative-AI assistant built into Zoom &mdash; meeting summaries, recaps, and action items. Available on full-time faculty, staff, and student Zoom accounts.</p>
-        <div class="card-meta">
-          <span class="resource-tag tag-tool">Productivity</span>
-        </div>
 <div class="card-links" style="margin-top:0.9rem; padding-top:0.7rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:0.35rem 1.1rem;">
           <a class="card-link" style="margin-top:0;" href="https://upenn.zoom.us" target="_blank" rel="noopener">Penn Zoom</a>
           <a class="card-link" style="margin-top:0;" href="https://www.law.upenn.edu/its/docs/room-tech-conferencing/zoom-ai-companion.php" target="_blank" rel="noopener">Zoom AI guide</a>
@@ -1450,29 +1432,27 @@
     <div class="card-grid">
 
       <div class="card">
-        <span class="resource-tag tag-tool" style="margin-bottom:0.75rem;">Coding &amp; Files</span>
         <h3 id="card-ag-claude-code">Claude Code</h3>
+        <div style="display:flex; flex-wrap:wrap; gap:0.3rem; align-items:center; margin:0.1rem 0 0.6rem;"><span style="font-size:11px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--gold); white-space:nowrap;">&#9733; Recommended for:</span><span class="mode-badge mode-building">Building with AI</span></div>
         <p>Anthropic&rsquo;s agentic coding tool, available in your terminal, IDE, desktop app, or browser. Reads and edits files, runs shell commands, executes scripts, and orchestrates multi-step tasks on your computer. Widely used for coding but equally useful for document workflows, data analysis, and any task that touches files. Requires a paid Claude subscription. At Penn Law, faculty can use it via a research account.</p>
         <a class="card-link" href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener">Claude Code overview &amp; installation</a>
       </div>
 
       <div class="card">
-        <span class="resource-tag tag-tool" style="margin-bottom:0.75rem;">Coding &amp; Files</span>
         <h3 id="card-ag-codex">OpenAI Codex</h3>
         <p>OpenAI&rsquo;s agentic coding tool, available as a terminal CLI, desktop app (Windows and macOS), and inside ChatGPT&rsquo;s web app. Reads your repository, edits files, runs tests, and iterates &mdash; the same shape as Claude Code, from a different vendor. Install via <code>npm i -g @openai/codex</code> or Homebrew. <strong>Requires a personal ChatGPT Plus, Pro, Business, or Enterprise subscription &mdash; Penn&rsquo;s ChatGPT EDU deployment does not currently include Codex.</strong></p>
         <a class="card-link" href="https://openai.com/codex/" target="_blank" rel="noopener">OpenAI Codex overview</a>
       </div>
 
       <div class="card">
-        <span class="resource-tag tag-tool" style="margin-bottom:0.75rem;">Coding &amp; Files</span>
         <h3>Gemini CLI</h3>
         <p>Google&rsquo;s open-source agentic CLI (Apache 2.0). Brings Gemini directly into the terminal with built-in tools and MCP support. The same engine powers <em>agent mode</em> in Gemini Code Assist for VS Code. Requires a paid Google AI plan for Penn work.</p>
         <a class="card-link" href="https://github.com/google-gemini/gemini-cli" target="_blank" rel="noopener">Gemini CLI on GitHub</a>
       </div>
 
       <div class="card">
-        <span class="resource-tag tag-tool" style="margin-bottom:0.75rem;">App-Based Agent</span>
         <h3>Claude Cowork</h3>
+        <div style="display:flex; flex-wrap:wrap; gap:0.3rem; align-items:center; margin:0.1rem 0 0.6rem;"><span style="font-size:11px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--gold); white-space:nowrap;">&#9733; Recommended for:</span><span class="mode-badge mode-working">Working with AI</span><span class="mode-badge mode-building">Building with AI</span></div>
         <p>Anthropic&rsquo;s app-based agentic AI &mdash; a friendlier alternative to the terminal agents above, accessed through a desktop or browser app. Hand it a task (research, drafting, analysis, summarization) and it works in the background. Closer to delegation than command-line interaction. <strong>For now, faculty cannot connect external agentic AI tools to the Law School&rsquo;s O365</strong> (email, calendar, OneDrive, Teams), so use Cowork for self-contained tasks rather than as a productivity-app integrator. Launched in early 2026. A limited Penn Carey Law staff pilot begins in July; otherwise an individual subscription is required.</p>
       </div>
 
@@ -1500,6 +1480,43 @@
         <li><a href="https://github.com/polkwagner/law-faculty-skills" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Law faculty skills</a> &mdash; my open-source skills for faculty tasks (install instructions in the README)</li>
       </ul>
       <p>If you want help getting set up, email me &mdash; I'm happy to walk you through it.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="section-label">For the Technically Curious</p>
+    <h2 class="section-title">Model APIs</h2>
+
+    <div class="prose-section">
+      <p>The agentic tools above are prebuilt. If you'd rather build your own &mdash; automate a repeat task, process a batch of documents, or wire a model into a script &mdash; you can call the models directly through an API. You don't need to be a software engineer: if you can write a basic script (or have an AI write one for you), you can use one.</p>
+
+      <h3>Why Use an API?</h3>
+      <p>The conversational tools are great for one-off tasks. But if you find yourself doing the same thing over and over &mdash; processing a batch of documents, grading with a rubric, extracting data from a set of files &mdash; an API lets you automate it. You write a script once, and it runs the same prompt across hundreds of inputs without you copy-pasting anything.</p>
+      <p>APIs also give you more control: you can choose the model, adjust parameters like temperature (how creative vs. deterministic the output is), and build multi-step workflows where the output of one call feeds into the next.</p>
+
+      <h3>The Penn LLM Gateway</h3>
+      <p>Penn runs a secure <a href="https://www.truefoundry.com/docs/ai-gateway/intro-to-llm-gateway" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">LLM Gateway</a> that provides programmatic API access to a range of models from inside Penn's environment &mdash; built for research and tool-building. <strong>Penn Carey Law is part of the pilot program.</strong> It's the Penn-sanctioned path to API access, as opposed to a personal vendor account, which makes it the right starting point for work that touches Penn data or is funded by Penn. Email me to get connected.</p>
+
+      <h3>Anthropic (Claude) API</h3>
+      <p>If you'd rather go straight to a vendor, Anthropic's API gives you direct access to the Claude models &mdash; the same ones powering Claude Code and the Claude chat interface, but programmatically. Strong at writing, analysis, long documents, and coding tasks.</p>
+      <ul>
+        <li><a href="https://platform.claude.com/docs/" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Documentation</a></li>
+        <li><a href="https://platform.claude.com/docs/en/get-started" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Getting started</a></li>
+        <li><a href="https://www.anthropic.com/pricing" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Pricing</a> &mdash; pay per use; starts at a few dollars for significant usage</li>
+      </ul>
+
+      <h3>OpenAI API</h3>
+      <p>OpenAI's API gives you access to the GPT-5 family of models &mdash; the same models behind ChatGPT, but with full programmatic control. Broad capabilities across writing, reasoning, and multimodal tasks.</p>
+      <ul>
+        <li><a href="https://developers.openai.com/api/docs/" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Documentation</a></li>
+        <li><a href="https://platform.openai.com/docs/quickstart" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Quickstart</a></li>
+        <li><a href="https://openai.com/pricing" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Pricing</a></li>
+      </ul>
+
+      <h3>Other Models</h3>
+      <p>The AI model landscape is broader than just Anthropic and OpenAI. Google's <strong>Gemini</strong> models are available through their API with similar capabilities. There's also a growing ecosystem of <strong>open-source models</strong> &mdash; Meta's Llama, Mistral, and others &mdash; that you can run locally or through hosting providers, sometimes for free. I'm happy to discuss options if you're exploring this space.</p>
+
+      <p style="margin-top:1.5rem;">If you're interested in working with APIs and want help getting started, email me. I can point you to examples and walk through the basics.</p>
     </div>
 
     <div class="divider"></div>
@@ -1541,7 +1558,7 @@
         <span style="font-size:10.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:#fff; background:var(--navy); padding:0.22rem 0.65rem; border-radius:999px;">Everyday AI</span>
         <h3 style="margin:0; font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); font-weight:500;">Chat, draft, summarize &mdash; no setup, no learning curve</h3>
       </div>
-      <p style="font-size:12px; color:var(--mid-gray); text-transform:uppercase; letter-spacing:0.05em; margin:0 0 0.7rem;"><strong style="color:var(--navy);">Recommended Tools:</strong> <span style="color:var(--gold);">&#9733;</span> <a href="#card-pennchat" onclick="return goToCard('getting-started','card-pennchat');" style="color:var(--navy); text-decoration:underline;">PennChat</a> &middot; <a href="#card-copilot" onclick="return goToCard('getting-started','card-copilot');" style="color:var(--navy); text-decoration:underline;">Microsoft Copilot</a></p>
+      <p style="font-size:12px; color:var(--mid-gray); text-transform:uppercase; letter-spacing:0.05em; margin:0 0 0.7rem;"><strong style="color:var(--navy);">Recommended Tools:</strong> <span style="color:var(--gold);">&#9733;</span> <a href="#card-pennchat" onclick="return goToCard('getting-started','card-pennchat');" style="color:var(--navy); text-decoration:underline;">PennChat</a> &middot; <a href="#card-claude" onclick="return goToCard('getting-started','card-claude');" style="color:var(--navy); text-decoration:underline;">Claude.ai</a></p>
       <p style="margin:0 0 0.7rem;">You work entirely in a chat window: type a question or paste in some text, get an answer, copy what you need &mdash; no setup beyond logging in. PennChat is the safe default for Penn work, since it&rsquo;s cleared for most University data.</p>
       <ul style="margin:0;">
         <li>Draft and polish emails, memos, and announcements</li>
@@ -1573,7 +1590,7 @@
         <span style="font-size:10.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:#fff; background:var(--red); padding:0.22rem 0.65rem; border-radius:999px;">Building with AI</span>
         <h3 style="margin:0; font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); font-weight:500;">Agentic tools that run multi-step work across your files and code</h3>
       </div>
-      <p style="font-size:12px; color:var(--mid-gray); text-transform:uppercase; letter-spacing:0.05em; margin:0 0 0.7rem;"><strong style="color:var(--navy);">Recommended Tools:</strong> <span style="color:var(--gold);">&#9733;</span> <a href="#card-ag-claude-code" onclick="return goToCard('agentic-ai','card-ag-claude-code');" style="color:var(--navy); text-decoration:underline;">Claude Code</a> &middot; <a href="#card-ag-codex" onclick="return goToCard('agentic-ai','card-ag-codex');" style="color:var(--navy); text-decoration:underline;">OpenAI Codex</a></p>
+      <p style="font-size:12px; color:var(--mid-gray); text-transform:uppercase; letter-spacing:0.05em; margin:0 0 0.7rem;"><strong style="color:var(--navy);">Recommended Tools:</strong> <span style="color:var(--gold);">&#9733;</span> <a href="#card-ag-claude-code" onclick="return goToCard('agentic-ai','card-ag-claude-code');" style="color:var(--navy); text-decoration:underline;">Claude Code</a> &middot; <a href="#card-claude-cowork" onclick="return goToCard('getting-started','card-claude-cowork');" style="color:var(--navy); text-decoration:underline;">Claude Cowork</a></p>
       <p style="margin:0 0 0.7rem;">You want AI that acts on your behalf &mdash; reading files, running steps, and automating work you&rsquo;d otherwise repeat by hand. It&rsquo;s a bigger setup and a steeper learning curve; the <a href="#" onclick="activateTab('agentic-ai'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;" style="color:var(--navy); text-decoration:underline;">Agentic AI tab</a> has the tools and safe-use guidance.</p>
       <ul style="margin:0;">
         <li>Run the <a href="https://github.com/polkwagner/law-faculty-skills" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Law Faculty Skills</a> &mdash; class prep, exam generation, slide review, document production &mdash; from a single command</li>
@@ -1582,6 +1599,48 @@
         <li>Connect external tools and data through MCP</li>
         <li>Let an agent carry a multi-step task end to end, with your review at each step</li>
       </ul>
+    </div>
+
+    <style>
+      .model-table td:first-child { width: 40%; }
+      .model-table .tier { display: inline-block; margin-top: 0.2rem; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--gold); font-weight: 600; }
+    </style>
+    <div id="pennchat-models" style="border-left:4px solid var(--navy); background:var(--cream); border-radius:0 10px 10px 0; padding:1.4rem 1.75rem; margin-bottom:1.4rem; scroll-margin-top:70px;">
+      <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:0.4rem;">
+        <span style="font-size:10.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:#fff; background:var(--navy); padding:0.22rem 0.65rem; border-radius:999px;">PennChat</span>
+        <h3 style="margin:0; font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); font-weight:500;">Which model should I use?</h3>
+      </div>
+      <p style="margin:0 0 0.9rem;">PennChat's model picker is long, but you rarely need to think about it. <strong style="color:var(--navy);">Start with Claude Sonnet 5.</strong> It handles nearly all faculty work well &mdash; and you can set it as your default in PennChat so it's selected every time you open a chat. Switch models only when a task pushes you toward one of the exceptions below.</p>
+      <div class="access-wrap">
+        <table class="access-table model-table">
+          <thead>
+            <tr><th>If you're&hellip;</th><th>Use</th><th>Why</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Drafting an email, memo, or syllabus; summarizing a long article or a batch of student comments; tightening a paragraph; asking questions about a document you've pasted in</td>
+              <td><span style="color:var(--gold);">&#9733;</span> <strong>Claude Sonnet 5</strong><br><span class="tier">Balanced</span></td>
+              <td>Strong quality, fast enough, the safe default for everyday work.</td>
+            </tr>
+            <tr>
+              <td>Working through a dense opinion or contract; reasoning across a hard doctrinal question; structuring a scholarly argument; reconciling sources that don't agree</td>
+              <td><strong>Claude Opus 4.8</strong><br><span class="tier">Premium</span></td>
+              <td>Top-end reasoning. Slower and uses more credits, but worth it when the thinking is the hard part.</td>
+            </tr>
+            <tr>
+              <td>Running quick lookups, reformatting or cleaning up text, fixing formatting across a long list, or short rote rewrites</td>
+              <td><strong>Claude Haiku 4.5</strong><br><span class="tier">Economical</span></td>
+              <td>Fast and light &mdash; fine for simple, high-volume tasks where you don't need deep reasoning.</td>
+            </tr>
+            <tr>
+              <td>Sanity-checking a Claude answer on a close call, or wanting a second phrasing or a different voice</td>
+              <td><strong>GPT-5.4</strong> or <strong>GPT-5.1</strong><br><span class="tier">Premium / Balanced</span></td>
+              <td>A different vendor's model &mdash; a useful cross-check when the stakes are high.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:13px; color:var(--mid-gray); line-height:1.6; margin:0.9rem 0 0;">PennChat groups its models into <strong style="color:var(--navy);">Premium</strong>, <strong style="color:var(--navy);">Balanced</strong>, and <strong style="color:var(--navy);">Economical</strong> tiers. The specific names change as new versions ship; the tiers don't. When in doubt, pick the newest model in the tier that fits your task &mdash; and remember that Premium models draw more of your usage credits. Need a Word or PDF file back? The Sonnet models include document generation.</p>
     </div>
 
     <div class="divider"></div>
@@ -1632,7 +1691,7 @@
 
   </section>
 
-  <!-- ═══ TAB 4: TOOLS & SETUP ═══ -->
+  <!-- ═══ TAB 4: ADVANCED CLAUDE ═══ -->
   <section class="tab-pane" id="tools" role="tabpanel" aria-labelledby="tab-btn-tools" tabindex="0">
 
     <p class="section-label">Where to start</p>
@@ -1648,7 +1707,7 @@
 
     <div class="divider"></div>
 
-    <p class="section-label">Tools &amp; Setup</p>
+    <p class="section-label">Advanced Claude</p>
     <h2 class="section-title">Getting More Out of Claude Code</h2>
 
     <div class="prose-section">
@@ -1696,43 +1755,6 @@
       <h3>Troubleshooting</h3>
       <p><strong>A Dropbox-synced folder isn&rsquo;t reachable in Cowork on my second computer.</strong> Expected behavior, not a bug. Folder connections are granted per computer, so even though the folder is physically synced to both machines, the Desktop app has to be opened and the folder explicitly reconnected on each machine. Open the folder connector in the Desktop app on the second computer and add the same folder there.</p>
       <p><strong>My Cowork projects don&rsquo;t show up on my other computer at all.</strong> A real product limitation, not a settings problem. Cowork&rsquo;s internal Projects feature is local-only with no cloud sync (unlike claude.ai Projects, which do sync). Recreate the project on the second machine, or work without the project grouping and rely on directly connected folders instead.</p>
-    </div>
-
-    <div class="divider"></div>
-
-    <p class="section-label">For the Technically Curious</p>
-    <h2 class="section-title">Model APIs</h2>
-
-    <div class="prose-section">
-      <p>Everything above &mdash; ChatGPT, Claude, Harvey &mdash; uses a conversational interface. But the same AI models are also available through APIs, which let you build your own tools, automate workflows, and integrate AI into custom applications. You don't need to be a software engineer to find this useful &mdash; if you can write a basic script (or ask an AI to write one for you), you can use an API.</p>
-
-      <h3>Why Use an API?</h3>
-      <p>The conversational tools are great for one-off tasks. But if you find yourself doing the same thing over and over &mdash; processing a batch of documents, grading with a rubric, extracting data from a set of files &mdash; an API lets you automate it. You write a script once, and it runs the same prompt across hundreds of inputs without you copy-pasting anything.</p>
-      <p>APIs also give you more control: you can choose the model, adjust parameters like temperature (how creative vs. deterministic the output is), and build multi-step workflows where the output of one call feeds into the next.</p>
-
-      <h3>Anthropic (Claude) API</h3>
-      <p>Anthropic's API gives you direct access to the Claude models &mdash; the same ones powering Claude Code and the Claude chat interface, but programmatically. Strong at writing, analysis, long documents, and coding tasks.</p>
-      <ul>
-        <li><a href="https://platform.claude.com/docs/" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Documentation</a></li>
-        <li><a href="https://platform.claude.com/docs/en/get-started" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Getting started</a></li>
-        <li><a href="https://www.anthropic.com/pricing" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Pricing</a> &mdash; pay per use; starts at a few dollars for significant usage</li>
-      </ul>
-
-      <h3>OpenAI API</h3>
-      <p>OpenAI's API gives you access to the GPT-5 family of models &mdash; the same models behind ChatGPT, but with full programmatic control. Broad capabilities across writing, reasoning, and multimodal tasks.</p>
-      <ul>
-        <li><a href="https://developers.openai.com/api/docs/" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Documentation</a></li>
-        <li><a href="https://platform.openai.com/docs/quickstart" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Quickstart</a></li>
-        <li><a href="https://openai.com/pricing" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Pricing</a></li>
-      </ul>
-
-      <h3>Other Models</h3>
-      <p>The AI model landscape is broader than just Anthropic and OpenAI. Google's <strong>Gemini</strong> models are available through their API with similar capabilities. There's also a growing ecosystem of <strong>open-source models</strong> &mdash; Meta's Llama, Mistral, and others &mdash; that you can run locally or through hosting providers, sometimes for free. I'm happy to discuss options if you're exploring this space.</p>
-
-      <h3>Advanced Computing</h3>
-      <p>If you're doing heavy data work &mdash; training models, running large-scale analyses, or working with datasets that don't fit on a laptop &mdash; the <a href="https://parcc.upenn.edu/" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">Penn Advanced Research Computing Center (PARCC)</a> provides high-performance computing clusters and storage for faculty research. Niche interest for most, but essential if you need it.</p>
-
-      <p style="margin-top:1.5rem;">If you're interested in working with APIs and want help getting started, email me. I can point you to examples and walk through the basics.</p>
     </div>
 
     <div class="divider"></div>
@@ -2328,6 +2350,7 @@
     }
     const pane = document.getElementById(target);
     if (pane) pane.classList.add('active');
+    document.querySelectorAll('.overview-col').forEach(c => c.classList.toggle('active', c.dataset.nav === target));
   }
 
   // Switch to a tab and scroll to a specific card (used by the recommended-tool links)
@@ -2362,7 +2385,7 @@
     'getting-started': 'Getting Started',
     'agentic-ai': 'Agentic AI',
     'use-cases': 'Use Cases & Tips',
-    'tools': 'Tools & Setup',
+    'tools': 'Advanced Claude',
     'policies': 'Policies & Guidelines',
     'ai-at-penn': 'AI at Penn'
   };
