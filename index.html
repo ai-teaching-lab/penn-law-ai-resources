@@ -1076,7 +1076,7 @@
     </ul>
   </div>
   <div class="overview-col" data-nav="use-cases">
-    <h3>Use Cases &amp; Tips</h3>
+    <h3>Using AI</h3>
     <ul>
       <li><strong>Best practices</strong> &mdash; match the tool to your task</li>
       <li><strong>Prompting fundamentals</strong></li>
@@ -1101,7 +1101,7 @@
     </ul>
   </div>
   <div class="overview-col" data-nav="policies">
-    <h3>Policies &amp; Guidelines</h3>
+    <h3>Policies</h3>
     <ul>
       <li><strong>Data &amp; confidentiality</strong></li>
       <li><strong>Responsible use</strong></li>
@@ -1124,10 +1124,10 @@
   <nav class="tab-nav" role="tablist" aria-label="Resource sections">
     <!-- TODO 2027: retire tab-btn-featured once the 2026–27 lineup is no longer "new". -->
     <button class="tab-btn tab-btn-featured active" data-tab="getting-started" role="tab" id="tab-btn-getting-started" aria-selected="true" aria-controls="getting-started">Getting Started</button>
-    <button class="tab-btn" data-tab="use-cases" role="tab" id="tab-btn-use-cases" aria-selected="false" aria-controls="use-cases" tabindex="-1">Use Cases &amp; Tips</button>
+    <button class="tab-btn" data-tab="use-cases" role="tab" id="tab-btn-use-cases" aria-selected="false" aria-controls="use-cases" tabindex="-1">Using AI</button>
     <button class="tab-btn" data-tab="agentic-ai" role="tab" id="tab-btn-agentic-ai" aria-selected="false" aria-controls="agentic-ai" tabindex="-1">Agentic AI</button>
     <button class="tab-btn" data-tab="tools" role="tab" id="tab-btn-tools" aria-selected="false" aria-controls="tools" tabindex="-1">Advanced Claude</button>
-    <button class="tab-btn" data-tab="policies" role="tab" id="tab-btn-policies" aria-selected="false" aria-controls="policies" tabindex="-1">Policies &amp; Guidelines</button>
+    <button class="tab-btn" data-tab="policies" role="tab" id="tab-btn-policies" aria-selected="false" aria-controls="policies" tabindex="-1">Policies</button>
     <button class="tab-btn" data-tab="ai-at-penn" role="tab" id="tab-btn-ai-at-penn" aria-selected="false" aria-controls="ai-at-penn" tabindex="-1">AI at Penn</button>
   </nav>
 </div>
@@ -1187,6 +1187,7 @@
 <div class="card-links" style="margin-top:0.9rem; padding-top:0.7rem; border-top:1px solid var(--border); display:flex; flex-wrap:wrap; gap:0.35rem 1.1rem;">
           <a class="card-link" style="margin-top:0;" href="https://pennchat.upenn.edu" target="_blank" rel="noopener">Open PennChat</a>
           <a class="card-link" style="margin-top:0;" href="#pennchat-models" onclick="return goToCard('use-cases','pennchat-models');">Which model to use</a>
+          <a class="card-link" style="margin-top:0;" href="#pennchat-agents" onclick="return goToCard('use-cases','pennchat-agents');">Custom GPTs &amp; agents</a>
           <a class="card-link" style="margin-top:0;" href="https://isc.upenn.edu/resources/pennchat-pilot-FAQs" target="_blank" rel="noopener">PennChat FAQ</a>
           <a class="card-link" style="margin-top:0;" href="#" onclick="activateTab('policies'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;">Data classification</a>
         </div>
@@ -1353,7 +1354,7 @@
 
       <p><strong>Math and precision.</strong> LLMs are language tools, not calculators. They'll get basic arithmetic right most of the time, but anything involving complex calculations, data analysis, or precise quantitative reasoning should be checked independently.</p>
 
-      <p><strong>Confidentiality.</strong> When you type something into an AI tool, that text goes to a server. I recommend using only paid, enterprise-tier tools for professional work &mdash; and checking your privacy settings. More on this in the <a href="#" onclick="activateTab('policies'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;" style="color:var(--navy); text-decoration:underline;">Policies &amp; Guidelines</a> tab.</p>
+      <p><strong>Confidentiality.</strong> When you type something into an AI tool, that text goes to a server. I recommend using only paid, enterprise-tier tools for professional work &mdash; and checking your privacy settings. More on this in the <a href="#" onclick="activateTab('policies'); window.scrollTo({top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior:'smooth'}); return false;" style="color:var(--navy); text-decoration:underline;">Policies</a> tab.</p>
 
       <p><strong>It doesn't "understand" anything.</strong> This is worth saying plainly: LLMs don't know what they're saying. They predict the next word based on patterns in training data. The output can be impressive &mdash; even insightful &mdash; but there's no reasoning happening behind the curtain the way there is when you think through a problem. Your judgment is not optional.</p>
 
@@ -1641,6 +1642,15 @@
         </table>
       </div>
       <p style="font-size:13px; color:var(--mid-gray); line-height:1.6; margin:0.9rem 0 0;">PennChat groups its models into <strong style="color:var(--navy);">Premium</strong>, <strong style="color:var(--navy);">Balanced</strong>, and <strong style="color:var(--navy);">Economical</strong> tiers. The specific names change as new versions ship; the tiers don't. When in doubt, pick the newest model in the tier that fits your task &mdash; and remember that Premium models draw more of your usage credits. Need a Word or PDF file back? The Sonnet models include document generation.</p>
+    </div>
+
+    <div id="pennchat-agents" style="border-left:4px solid var(--navy); background:var(--cream); border-radius:0 10px 10px 0; padding:1.4rem 1.75rem; margin-bottom:1.4rem; scroll-margin-top:70px;">
+      <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap; margin-bottom:0.4rem;">
+        <span style="font-size:10.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:#fff; background:var(--navy); padding:0.22rem 0.65rem; border-radius:999px;">PennChat</span>
+        <h3 style="margin:0; font-family:'EB Garamond',serif; font-size:1.3rem; color:var(--navy); font-weight:500;">Coming from custom GPTs?</h3>
+      </div>
+      <p style="margin:0 0 0.9rem;">PennChat runs on <strong style="color:var(--navy);">LibreChat</strong>, an open platform that does more than trade messages. Its <strong>Agents</strong> feature is the close cousin of ChatGPT's custom GPTs: you give an agent standing <strong>instructions</strong>, attach <strong>knowledge files</strong> it can search across, and add <strong>tools</strong> &mdash; web search, a code interpreter, and OpenAPI <strong>actions</strong> &mdash; so it can act on a task, not just answer a question. (Which tools are switched on can vary during the pilot.)</p>
+      <p style="margin:0;">There's no one-click import from ChatGPT, so a custom GPT is rebuilt, not migrated: paste your GPT's instructions into a new agent, re-upload its knowledge files, and recreate its actions as PennChat tools. It's manual, but every custom-GPT capability has a direct equivalent. Open the <strong>Agent Builder</strong> from the side panel to start. <a href="https://www.librechat.ai/docs/features/agents" target="_blank" rel="noopener" style="color:var(--navy); text-decoration:underline;">LibreChat's agent guide &rarr;</a></p>
     </div>
 
     <div class="divider"></div>
@@ -2384,9 +2394,9 @@
   const tabNames = {
     'getting-started': 'Getting Started',
     'agentic-ai': 'Agentic AI',
-    'use-cases': 'Use Cases & Tips',
+    'use-cases': 'Using AI',
     'tools': 'Advanced Claude',
-    'policies': 'Policies & Guidelines',
+    'policies': 'Policies',
     'ai-at-penn': 'AI at Penn'
   };
   let currentResults = [];
