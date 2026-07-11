@@ -2346,6 +2346,8 @@
   const panes = document.querySelectorAll('.tab-pane');
 
   function activateTab(target) {
+    const pane = document.getElementById(target);
+    if (!pane) return;
     tabs.forEach(t => {
       t.classList.remove('active');
       t.setAttribute('aria-selected', 'false');
@@ -2358,8 +2360,7 @@
       btn.setAttribute('aria-selected', 'true');
       btn.setAttribute('tabindex', '0');
     }
-    const pane = document.getElementById(target);
-    if (pane) pane.classList.add('active');
+    pane.classList.add('active');
     document.querySelectorAll('.overview-col').forEach(c => c.classList.toggle('active', c.dataset.nav === target));
   }
 
@@ -2378,6 +2379,13 @@
       window.scrollTo({ top: document.querySelector('.tab-nav-wrap').offsetTop - 56, behavior: 'smooth' });
     });
   });
+
+  function activateFromHash() {
+    const target = location.hash.slice(1);
+    if (target && document.getElementById(target)) activateTab(target);
+  }
+  activateFromHash();
+  window.addEventListener('hashchange', activateFromHash);
 
   document.querySelectorAll('.overview-col').forEach(col => {
     col.addEventListener('click', () => {
