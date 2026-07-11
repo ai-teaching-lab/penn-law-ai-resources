@@ -78,7 +78,8 @@
   .site-header a:focus-visible,
   .site-header button:focus-visible,
   .callout a:focus-visible,
-  .site-footer a:focus-visible {
+  .site-footer a:focus-visible,
+  .skip-link:focus-visible {
     outline-color: white;
     outline-offset: 3px;
   }
@@ -2358,10 +2359,11 @@
 <script>
   const tabs = document.querySelectorAll('.tab-btn');
   const panes = document.querySelectorAll('.tab-pane');
+  const paneIds = new Set([...panes].map(p => p.id));
 
   function activateTab(target) {
     const pane = document.getElementById(target);
-    if (!pane) return;
+    if (!pane || !pane.classList.contains('tab-pane')) return;
     tabs.forEach(t => {
       t.classList.remove('active');
       t.setAttribute('aria-selected', 'false');
@@ -2396,7 +2398,7 @@
 
   function activateFromHash() {
     const target = location.hash.slice(1);
-    if (target && document.getElementById(target)) activateTab(target);
+    if (paneIds.has(target)) activateTab(target);
   }
   activateFromHash();
   window.addEventListener('hashchange', activateFromHash);
