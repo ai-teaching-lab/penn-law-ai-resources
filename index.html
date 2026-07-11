@@ -9,6 +9,10 @@
 <meta property="og:url" content="https://ai-resources.ai-teaching-lab.org/">
 <meta property="og:title" content="AI Resources — Penn Carey Law">
 <meta property="og:description" content="The faculty hub for AI at Penn Carey Law — tools, use cases, agentic-AI guidance, policies, and the wider Penn AI ecosystem.">
+<meta property="og:image" content="https://ai-resources.ai-teaching-lab.org/assets/apple-touch-icon.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Penn Carey Law AI Resources">
+<meta name="twitter:description" content="AI tools, use cases, policies, and agentic-AI guidance for Penn Carey Law faculty.">
 <meta name="description" content="The faculty hub for AI at Penn Carey Law — tools, use cases, agentic-AI guidance, policies, and the wider Penn AI ecosystem.">
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
@@ -566,6 +570,7 @@
   .tag-notes   { background: #EAF4E8; color: #1E6B1A; }
   .tag-guide   { background: #F0EBF7; color: #4A2D7A; }
   .tag-tool    { background: #E0E8F5; color: var(--navy); }
+  .tag-skill   { background: #E0E8F5; color: var(--navy); }
   .tag-usecase { background: #F0EBF7; color: #4A2D7A; }
 
   /* ── PROSE SECTION ── */
@@ -1006,6 +1011,14 @@
     .header-search kbd { display: none; }
     .search-overlay { padding: 5vh 0.75rem 0.75rem; }
     .search-modal { max-height: 90vh; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 </style>
 </head>
@@ -2424,6 +2437,7 @@
   }
   function closeSearch() {
     searchOverlay.classList.remove('active');
+    if (searchBtn) searchBtn.focus();
     searchOverlay.setAttribute('inert', '');
     searchOverlay.setAttribute('aria-hidden', 'true');
     searchInput.value = '';
