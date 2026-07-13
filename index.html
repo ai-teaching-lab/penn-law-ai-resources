@@ -107,11 +107,6 @@
     text-decoration: none;
     color: var(--dark-gray);
   }
-  .lab-stripe-logo {
-    height: 72px;
-    width: auto;
-    flex-shrink: 0;
-  }
   .lab-stripe-text {
     flex: 1;
     font-size: 14px;
@@ -1006,8 +1001,7 @@
     .hero-logo { height: 90px; }
     .lab-stripe { padding: 0.6rem 1rem; }
     .lab-stripe-link { gap: 0.75rem; }
-    .lab-stripe-logo { height: 52px; }
-    .lab-stripe-text { display: none; }
+    .lab-stripe-text { font-size: 13px; }
     .header-search .label { display: none; }
     .header-search kbd { display: none; }
     .search-overlay { padding: 5vh 0.75rem 0.75rem; }
@@ -1031,7 +1025,6 @@
 <!-- TOP STRIPE: AI Teaching Lab attribution -->
 <div class="lab-stripe">
   <a class="lab-stripe-link" href="https://ai-teaching-lab.org/" target="_blank" rel="noopener">
-    <img class="lab-stripe-logo" src="assets/ai-teaching-lab-stacked.svg" alt="AI Teaching Lab" />
     <span class="lab-stripe-text">A project of the <strong>AI Teaching Lab</strong> at Penn Carey Law &mdash; research, tools, and teaching on AI in legal education and practice.</span>
     <span class="lab-stripe-cta">Visit the Lab &rarr;</span>
   </a>
@@ -2121,10 +2114,33 @@
 
     <p class="section-label">Faculty Support</p>
     <h2 class="section-title">AI Office Hours</h2>
+    <p class="section-intro">Informal Zoom sessions running through the start of the fall semester. Bring your questions, plans, use cases, and gripes &mdash; we'll talk it through. All faculty are welcome, and nothing is required in advance. Session #1 is an overview of PennChat and how it compares (or doesn't) to tools you may already be using.</p>
+
+    <style>
+      .oh-list { list-style: none; margin: 0 0 0.75rem; padding: 0; max-width: 640px; }
+      .oh-list li {
+        display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.3rem 1rem;
+        padding: 0.6rem 0; border-bottom: 1px solid var(--border);
+        font-family: 'DM Sans', sans-serif; font-size: 14px;
+      }
+      .oh-date { font-weight: 600; color: var(--navy); min-width: 9.5rem; }
+      .oh-time { color: var(--mid-gray); flex: 1; white-space: nowrap; }
+      .oh-list a { color: var(--red); font-weight: 600; text-decoration: none; white-space: nowrap; }
+      .oh-list a:hover { text-decoration: underline; }
+      .oh-note { font-size: 12.5px; color: var(--mid-gray); margin: 0 0 2rem; line-height: 1.6; }
+    </style>
+    <ul class="oh-list">
+      <li><span class="oh-date">Monday, July 20</span><span class="oh-time">11:00 am &ndash; 12:00 pm ET</span><a href="https://fantastical.app/i/AUwcvCdkrozOFAG" target="_blank" rel="noopener">RSVP &rarr;</a></li>
+      <li><span class="oh-date">Monday, August 3</span><span class="oh-time">12:00 &ndash; 1:00 pm ET</span><a href="https://fantastical.app/i/iV8BVRd9rrzlFhl" target="_blank" rel="noopener">RSVP &rarr;</a></li>
+      <li><span class="oh-date">Monday, August 17</span><span class="oh-time">11:00 am &ndash; 12:00 pm ET</span><a href="https://fantastical.app/i/eeZCcPeXrtzhFy6" target="_blank" rel="noopener">RSVP &rarr;</a></li>
+      <li><span class="oh-date">Monday, August 24</span><span class="oh-time">12:00 &ndash; 1:00 pm ET</span><a href="https://fantastical.app/i/PsyGRlfyrczuFx3" target="_blank" rel="noopener">RSVP &rarr;</a></li>
+      <li><span class="oh-date">Monday, August 31</span><span class="oh-time">12:00 &ndash; 1:00 pm ET</span><a href="https://fantastical.app/i/9tMq8ifhrTzLF5F" target="_blank" rel="noopener">RSVP &rarr;</a></li>
+    </ul>
+    <p class="oh-note">RSVP is optional, but helpful for planning. Sessions run on Zoom.</p>
 
     <div class="card-grid">
       <div class="card">
-        <span class="resource-tag tag-guide" style="margin-bottom:0.75rem;">Faculty</span>
+        <span class="resource-tag tag-guide" style="margin-bottom:0.75rem;">Past session</span>
         <h3>AI Office Hours: What's Worth Knowing</h3>
         <p>The current AI landscape for law faculty &mdash; the models worth using, the shift from chatbots to agents, and resources to get started. Reference screen from the April 1, 2026 faculty session.</p>
         <a class="card-link" href="ai-office-hours.html" target="_blank" rel="noopener">View session screen</a>
@@ -2471,15 +2487,19 @@
         if (seen.has(el)) return;
         seen.add(el);
 
-        // Find a section title (closest h2 above, or this element if it's a heading)
+        // Find a section title (nearest heading above, or this element if it's a heading).
+        // Climb ancestors too, so items nested in a <ul>/<div> still resolve to their heading.
         let section = '';
         if (el.tagName === 'H2' || el.tagName === 'H3') {
           section = text;
         } else {
-          let prev = el;
-          while ((prev = prev.previousElementSibling)) {
-            if (prev.tagName === 'H3') { section = prev.textContent.trim(); break; }
-            if (prev.tagName === 'H2') { section = prev.textContent.trim(); break; }
+          let node = el;
+          while (node && node !== tab && !section) {
+            let prev = node;
+            while ((prev = prev.previousElementSibling)) {
+              if (prev.tagName === 'H2' || prev.tagName === 'H3') { section = prev.textContent.trim(); break; }
+            }
+            node = node.parentElement;
           }
           if (!section) {
             const h2 = tab.querySelector('h2.section-title');
