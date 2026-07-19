@@ -33,6 +33,8 @@ the portal's current copy.
 - **Also present, unmentioned by the portal:** Projects, MCP Settings (Document_Generator and PDF_Generator servers), a visible usage-credit balance, and a ~887K-token context window. Out of scope for this deck; a follow-up portal PR should cover them.
 - **Data banner, verbatim:** approved for High Risk Data, excluding Social Security and credit card numbers; avoid identifiable and protected health information including names and Medical Record Numbers.
 - **Platform:** LibreChat v0.8.7.
+- **Switching models clears an attached file.** Attach after choosing the model, not before.
+- **Long documents are slow.** A 28-page PDF adversarial read did not return within 2.5 minutes. Demo 1 is pre-run before the session, never performed live.
 
 ## File Structure
 
@@ -251,14 +253,19 @@ Each cue slide is an `img-explain`: the screenshot carries the beat for the vide
 
 ```
 ## img-explain
-title: Demo — Get In, Do One Real Thing
-image: assets/02-first-chat.png
-filename: pennchat.upenn.edu
-- Log in with your PennKey
-- Paste in something you are actually working on
-- Read the answer as a draft, not an oracle
-- Two minutes
+title: Demo — Let It Argue With You
+image: assets/02-paper-upload.png
+filename: A working draft, and a hostile referee
+- Attach a draft you are actually working on
+- Ask it to read as a hostile referee and to say what would fix each problem
+- Run this before the session and leave the tab open, a 28-page read takes over two minutes
+- The point is not that it flatters you
 ```
+
+**Pre-run, do not perform live.** A 28-page adversarial read took over two
+minutes to return with no visible output — a third of the session's demo budget
+spent on a loading dot. Polk sends the prompt before the session and switches to
+the finished tab. The third bullet is his own reminder.
 
 - [ ] **Step 2: Insert Demo 2 after the "Which Model to Pick" slide**
 
