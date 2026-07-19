@@ -22,7 +22,7 @@ title: What You Would Actually Use It For
 - Summarize a long document, report, or email thread
 - Brainstorm ideas when you face a blank page
 - Explain an unfamiliar concept or area of law in plain terms
-callout: No setup, no learning curve.
+callout: Same PennKey login. Nothing to install.
 
 ## table
 title: How It Compares
@@ -30,22 +30,22 @@ title: How It Compares
 | Who runs it | Penn | OpenAI | Anthropic |
 | Penn data cleared | Low, Moderate, most High | Low and Moderate | Not reviewed |
 | Models | Claude and GPT | GPT only | Claude only |
-| Cost to you | Free in pilot | Free | Personal paid |
+| Cost to you | Free, credit-based | Free | Personal paid |
 commentary: When the work touches Penn data, use PennChat.
 
 ## img-explain
 title: Demo: Let It Argue With You
 image: assets/02-paper-upload.png
 filename: A working draft, and a hostile referee
-- Attach a draft you are actually working on
+- Attach a draft you are working on
 - Ask it to read as a hostile referee and to say what would fix each problem
-- Run this before the session and leave the tab open, a 28-page read takes over two minutes
-- The point is not that it flatters you
+- A long draft takes a couple of minutes to read
+- The point is the fixes it names, not the praise it withholds
 
 ## bullets
 title: Which Model to Pick
 - Start with Claude Sonnet 5, and pin it so it sits at the top of the picker
-- It handles nearly all faculty work well
+- It handles nearly all your work well
 - The picker groups models into Premium, Balanced, Economical, and Legacy
 - Model names change as new versions ship; the tiers do not
 - Premium models draw more of your usage credits
@@ -65,10 +65,8 @@ title: Agents Are Custom GPTs
   - instructions it always follows
   - knowledge files it can search
   - tools, including web search and a code interpreter
-- There is no one-click import from ChatGPT
-- A custom GPT is rebuilt, not migrated: paste the instructions, re-upload the files
-- Every custom-GPT capability has a direct equivalent
-callout: Open Agent Builder from the side panel.
+- No import from ChatGPT: paste the instructions, re-upload the files
+callout: Every custom-GPT capability has an equivalent here.
 
 ## img-explain
 title: Demo: Build a Virtual TA
@@ -76,11 +74,10 @@ image: assets/06-agent-builder.png
 filename: Agent Builder
 - Side panel, then Agent Builder, then Create New Agent
 - Fill in the instructions and pick a model, then Create
-- Only now can you attach knowledge files, then Save
-- Short on time? Show the finished TA instead and narrate how it was made
+- Attach knowledge files only after that, then Save
 
 ## img-explain
-title: What It Looks Like
+title: The TA in Action
 image: assets/05-agent-in-use.png
 filename: Patent Law TA - Week 3: Novelty & Priority
 - A student asks whether a claim is anticipated
