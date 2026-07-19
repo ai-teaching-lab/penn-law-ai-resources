@@ -4,30 +4,29 @@ shield: reg
 
 ## title
 title: PennChat
-subtitle: What it is, and how to actually use it
+subtitle: What it is, and how to use it
 author: R. Polk Wagner
 date: Fall 2026
 
 ## bullets
 title: What PennChat Is
 - Penn's own AI chat portal, hosted by the University
-- One interface in front of two model families: Anthropic's Claude and OpenAI's GPT
+- One interface, two model families: Claude and GPT
 - Free to you during the pilot
-- Cleared for Low, Moderate, and most High Risk University data, not SSNs, card data, or identifiable PHI
-- Requires PennNet, AirPennNet, or GlobalProtect
-callout: This is the safe default for Penn work.
+- Cleared for Low, Moderate, and most High Risk Penn data
+callout: Not SSNs, card data, or PHI. Needs PennNet or GlobalProtect.
 
 ## table
 title: How It Compares
 | | PennChat | ChatGPT EDU | Claude.ai |
-| Who runs it | Penn | OpenAI, under Penn's agreement | Anthropic |
-| Penn data cleared | Low, Moderate, most High | Low and Moderate | Not reviewed for Penn data |
+| Who runs it | Penn | OpenAI | Anthropic |
+| Penn data cleared | Low, Moderate, most High | Low and Moderate | Not reviewed |
 | Models | Claude and GPT | GPT only | Claude only |
-| Cost to you | Free during pilot | Free | Free tier, or personal paid |
+| Cost to you | Free in pilot | Free | Personal paid |
 commentary: When the work touches Penn data, use PennChat.
 
 ## img-explain
-title: Demo — Let It Argue With You
+title: Demo: Let It Argue With You
 image: assets/02-paper-upload.png
 filename: A working draft, and a hostile referee
 - Attach a draft you are actually working on
@@ -45,7 +44,7 @@ title: Which Model to Pick
 callout: Pick the newest model in the tier that fits the task.
 
 ## img-explain
-title: Demo — The Model Picker
+title: Demo: The Model Picker
 image: assets/03-model-picker.png
 filename: Model picker, expanded
 - Open the picker at the top of the chat
@@ -64,7 +63,7 @@ title: Agents Are Custom GPTs
 callout: Open Agent Builder from the side panel.
 
 ## img-explain
-title: Demo — Build a Virtual TA
+title: Demo: Build a Virtual TA
 image: assets/06-agent-builder.png
 filename: Agent Builder
 - Side panel, then Agent Builder, then Create New Agent
@@ -75,7 +74,7 @@ filename: Agent Builder
 ## img-explain
 title: What It Looks Like
 image: assets/05-agent-in-use.png
-filename: Patent Law TA — Week 3: Novelty & Priority
+filename: Patent Law TA - Week 3: Novelty & Priority
 - A student asks whether a claim is anticipated
 - The TA refuses to answer first, and asks what the student thinks
 - It quotes § 102(a)(1) and points at Claim 1 of the attached patent
