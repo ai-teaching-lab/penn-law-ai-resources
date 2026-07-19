@@ -20,6 +20,20 @@
 - **Total runtime target:** 15–20 minutes, ≈7.5 min slides and ≈8.5 min demo.
 - **Screenshots go in** `decks/pennchat-tutorial/assets/`, referenced by relative path from the md.
 
+### Verified facts from the live UI (2026-07-19) — use these verbatim
+
+These were observed in Task 1 and override both this plan's earlier drafts and
+the portal's current copy.
+
+- **Models available:** Claude Sonnet 5, Claude Sonnet 4.6, Claude Opus 4.8, Claude Haiku 4.5, GPT-5.4. In the agent builder these appear as raw ids (`us.anthropic.claude-sonnet-5`).
+- **Picker groups:** My Agents · Azure OpenAI · PennChat · **Premium Models · Balanced Models · Economical Models · Legacy Models**. Four tiers, not three — the portal omits Legacy.
+- **Providers** (agent builder): PennChat and Azure OpenAI.
+- **"Set as default" is NOT verified.** No such control exists in Settings → General or Settings → Chat, and hovering a non-default model offers only a **pin**. Slide 5 and the model-picker demo say *pin*, never *set as default*. Do not reintroduce the default claim.
+- **Agent ordering gotcha:** knowledge files cannot be attached until the agent is created. "Upload File Context" is disabled until then. The demo click path is *fill the form → Create → attach files → Save*.
+- **Also present, unmentioned by the portal:** Projects, MCP Settings (Document_Generator and PDF_Generator servers), a visible usage-credit balance, and a ~887K-token context window. Out of scope for this deck; a follow-up portal PR should cover them.
+- **Data banner, verbatim:** approved for High Risk Data, excluding Social Security and credit card numbers; avoid identifiable and protected health information including names and Medical Record Numbers.
+- **Platform:** LibreChat v0.8.7.
+
 ## File Structure
 
 | Path | Responsibility |
@@ -42,7 +56,7 @@
 - Create: `decks/pennchat-tutorial/assets/02-first-chat.png`
 - Create: `decks/pennchat-tutorial/assets/03-model-picker.png`
 - Create: `decks/pennchat-tutorial/assets/04-default-model.png`
-- Create: `decks/pennchat-tutorial/assets/05-doc-upload.png`
+- Create: `decks/pennchat-tutorial/assets/05-agent-in-use.png`
 - Create: `decks/pennchat-tutorial/assets/06-agent-builder.png`
 - Create: `decks/pennchat-tutorial/assets/07-finished-agent.png`
 
@@ -174,9 +188,9 @@ commentary: When the work touches Penn data, use PennChat.
 
 ## bullets
 title: Which Model to Pick
-- Start with Claude Sonnet 5, and set it as your default
+- Start with Claude Sonnet 5, and pin it so it sits at the top of the picker
 - It handles nearly all faculty work well
-- The picker groups models into Premium, Balanced, and Economical
+- The picker groups models into Premium, Balanced, Economical, and Legacy
 - Model names change as new versions ship; the tiers do not
 - Premium models draw more of your usage credits
 callout: Pick the newest model in the tier that fits the task.
@@ -254,35 +268,44 @@ title: Demo — The Model Picker
 image: assets/03-model-picker.png
 filename: Model picker, expanded
 - Open the picker at the top of the chat
-- Premium, Balanced, Economical
-- Set Claude Sonnet 5 as your default so you stop thinking about it
+- Premium, Balanced, Economical, Legacy
+- Pin Claude Sonnet 5 so it is always the first thing you see
 ```
 
-- [ ] **Step 3: Insert Demo 3 immediately after Demo 2**
+Do not write "set as default" — see the verified-facts block in Global Constraints.
 
-```
-## img-explain
-title: Demo — Ask a Document
-image: assets/05-doc-upload.png
-filename: A PDF, and questions about it
-- Attach a PDF or a Word file to the chat
-- Ask about it the way you would ask a research assistant
-- This is the one that converts people
-```
+- [ ] **Step 3: Insert Demo 3 after the "Agents Are Custom GPTs" slide**
 
-- [ ] **Step 4: Insert Demo 4 after the "Agents Are Custom GPTs" slide**
+The standalone document-upload demo was merged into the agent demo: the TA agent
+answers from its attached patents, so it carries the document beat too. Three
+demos, not four.
 
 ```
 ## img-explain
-title: Demo — Build an Agent
+title: Demo — Build a Virtual TA
 image: assets/06-agent-builder.png
 filename: Agent Builder
-- Side panel, then Agent Builder
-- Give it instructions, attach a knowledge file, save
-- Short on time? Show a finished agent instead and narrate how it was made
+- Side panel, then Agent Builder, then Create New Agent
+- Fill in the instructions and pick a model, then Create
+- Only now can you attach knowledge files, then Save
+- Short on time? Show the finished TA instead and narrate how it was made
 ```
 
-The last bullet is the flex path from the spec. It stays on the slide as Polk's own reminder.
+The third bullet is the ordering gotcha; the fourth is the flex path. Both stay
+on the slide as Polk's own reminders.
+
+- [ ] **Step 4: Insert the payoff slide immediately after Demo 3**
+
+```
+## img-explain
+title: What It Looks Like
+image: assets/05-agent-in-use.png
+filename: Patent Law TA — Week 3: Novelty & Priority
+- A student asks whether a claim is anticipated
+- The TA refuses to answer first, and asks what the student thinks
+- It quotes § 102(a)(1) and points at Claim 1 of the attached patent
+- Instructions and knowledge files, doing exactly what you told them to
+```
 
 - [ ] **Step 5: Verify the running order**
 
@@ -290,7 +313,7 @@ The last bullet is the flex path from the spec. It stays on the slide as Polk's 
 grep -n '^## ' decks/pennchat-tutorial/pennchat-tutorial.md
 ```
 
-Expected, in this order: `deck`, `title`, `bullets`, `table`, `img-explain`, `bullets`, `img-explain`, `img-explain`, `bullets`, `img-explain`, `closing`. That is ten slides after the metadata block.
+Expected, in this order: `deck`, `title`, `bullets`, `table`, `img-explain`, `bullets`, `img-explain`, `bullets`, `img-explain`, `img-explain`, `closing`. That is ten slides after the metadata block.
 
 - [ ] **Step 6: Render**
 
