@@ -17,8 +17,14 @@ No "what is a chatbot" content.
 
 ## Deliverable
 
-A self-contained HTML deck built with the `polk-slides` skill — Penn navy
-(`#011F5B`), cream (`#FAF8F3`), EB Garamond headings, DM Sans body. Ten slides.
+A self-contained HTML deck built with the `polk-slides` skill. Ten slides, in
+that skill's standard Penn Carey Law theme — 16:9, Oswald, regular shield. The
+deck does **not** adopt the portal's web typography (EB Garamond / DM Sans);
+`polk-slides` has one theme and no style-selection step, and a deck is not a
+web page.
+
+Content source of record is `decks/pennchat-tutorial/pennchat-tutorial.md`
+(the slidekit DSL); the HTML is a build artifact rendered from it.
 
 **Location:** `pennchat-tutorial.html` at the root of this repo, linked from
 `ai-office-hours.html`. Rationale: it is faculty-facing, matches the
