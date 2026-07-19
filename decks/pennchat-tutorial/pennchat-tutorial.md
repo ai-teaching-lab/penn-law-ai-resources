@@ -11,10 +11,18 @@ date: Fall 2026
 ## bullets
 title: What PennChat Is
 - Penn's own AI chat portal, hosted by the University
+- Your everyday default: draft, summarize, brainstorm, explain, rewrite
 - One interface, two model families: Claude and GPT
-- Free to you during the pilot
 - Cleared for Low, Moderate, and most High Risk Penn data
 callout: Not SSNs, card data, or PHI. Needs PennNet or GlobalProtect.
+
+## bullets
+title: What You Would Actually Use It For
+- Draft and polish emails, memos, and announcements
+- Summarize a long document, report, or email thread
+- Brainstorm ideas when you face a blank page
+- Explain an unfamiliar concept or area of law in plain terms
+callout: No setup, no learning curve.
 
 ## table
 title: How It Compares
@@ -81,8 +89,5 @@ filename: Patent Law TA - Week 3: Novelty & Priority
 - Instructions and knowledge files, doing exactly what you told them to
 
 ## closing
-tagline:
-- PennChat is where Penn work belongs.
-- Start with one real task this week.
 qr-label: AI Resources
 qr-url: pennlaw.link/ai-resources
