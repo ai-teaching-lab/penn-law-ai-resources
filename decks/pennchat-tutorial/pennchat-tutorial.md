@@ -30,7 +30,7 @@ title: How It Compares
 | Who runs it | Penn (Amazon) | OpenAI | Anthropic |
 | Data cleared | Low / Mod / most High | Low / Moderate | Low / Moderate |
 | Models | Claude and GPT | GPT only | Claude only |
-| Tools | Agents, no code | GPTs, no codex | Skills, no cowork |
+| Tools | Agents, no code | GPTs, no codex | Skills + code, no cowork |
 | Cost | Free*, credit-based | $13/mo | $20 / $50 |
 commentary: *Long-term PennChat pricing/financing is TBD
 
