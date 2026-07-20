@@ -2,7 +2,7 @@
 
 **Date:** 2026-07-19
 **Owner:** Polk Wagner
-**Status:** Design approved; implementation pending
+**Status:** Shipped 2026-07-20 as PR #9. See the plan's Outcome section for what changed.
 
 ## Goal
 
