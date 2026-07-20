@@ -512,3 +512,72 @@ Present it start to finish against a timer, demos included. If it runs past 20 m
 4. Every slide passes every criterion in the visual design rubric.
 5. Voice is Polk's; no AI tells; faculty-only framing.
 6. `decks/` and `docs/superpowers/` are absent from the published site.
+
+---
+
+## Outcome (2026-07-20)
+
+Shipped as PR #9. The portal corrections it surfaced went out separately as
+PR #10. What differs from the plan above, and why:
+
+### Structure
+
+- **Eleven slides, not ten.** A use-cases slide was added to carry the portal's
+  "Everyday AI" framing; it later became "Pros and Cons of PennChat" when Polk
+  rewrote it.
+- **Three demos, not four.** The standalone document-upload demo was folded in:
+  the TA agent answers from its attached patents, so it carries that beat. Demo 1
+  then became a document upload in its own right (see below), so the deck still
+  shows uploading — just once, not twice.
+- **Demo 1 changed entirely.** Originally "log in and do one real task" with a
+  memo-tightening prompt. It became an adversarial read of Polk's exam-taker
+  paper: attach the draft, ask it to read as a hostile referee and to say what
+  would fix each problem.
+- **Demo 1 is pre-run, never performed live.** A 28-page adversarial read did not
+  return within 2.5 minutes of waiting. Performing that live would spend a third
+  of the demo budget on a loading dot. Polk sends the prompt before the session
+  and switches to the finished tab.
+
+### Claims cut
+
+- **"Set it as your default"** could not be verified and was replaced with
+  *pin*. No such control exists in Settings; hovering a non-default model offers
+  only a pin. The portal made the same claim and was corrected in PR #10.
+- **"Free during the pilot"** would be stale for a Fall session. The table now
+  reads "Free\*, credit-based" with a TBD footnote. Portal corrected likewise.
+- **"Every custom-GPT capability has a direct equivalent"** was softened to
+  *most*, because agents cannot be shared — which the deck itself says. Same
+  overclaim existed on the portal; corrected in PR #10.
+- **The SSN / card-data / PHI exclusions were removed from the deck** at Polk's
+  direction. They remain on the portal in two places. Flagged twice, decided.
+
+### Skill fix
+
+`polk-slides`' title slide was clipping its logo lockup — "University of
+Pennsylvania" sliced mid-word — on every deck, not just this one. Two children
+of `.title-slide` carried `margin-top: auto` while the container was also
+`justify-content: center`; with seven stacked elements the content exceeded the
+16:9 frame and the competing auto margins pushed it past both edges. Fixed in
+`~/.claude/skills/polk-slides/PENN_THEME.md` and mirrored to `claude-sync`.
+
+The shield still meets the top edge. Additional padding does not move it, so it
+is constrained elsewhere in `.slide-content` — left alone as a bleed rather than
+a defect.
+
+### Working notes for future edits
+
+- Sub-bullets nest with a **two-space indent**. A `--` prefix is silently
+  discarded — four sub-bullets vanished this way with no warning.
+- **Em-dashes become commas** at render (house rule). Use colons in titles.
+- slidekit **scales type to fill**, so removing a bullet or callout can cause
+  overflow rather than fix it. Shorten lines before cutting them. A callout
+  often acts as a size constraint.
+- The root `pennchat-tutorial.html` is a **manual copy**, not a symlink.
+  Re-copy it after every render or the published deck goes stale.
+
+### Not done
+
+- Timing rehearsal against a clock. The 15-20 minute estimate is unmeasured.
+- Projects and MCP Settings remain undocumented on the portal — observed to
+  exist, never exercised.
+- The pilot's mid-August end date and credit model are unconfirmed with ISC.
