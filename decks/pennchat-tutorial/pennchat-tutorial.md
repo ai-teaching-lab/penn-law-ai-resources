@@ -11,27 +11,27 @@ date: Fall 2026
 ## bullets
 title: What PennChat Is
 - Penn's own AI chat portal, hosted by the University
-- Your everyday default: draft, summarize, brainstorm, explain, rewrite
+- Useful as an AI ‘baseline’: solid chatbot interface, Penn approved
 - One interface, two model families: Claude and GPT
 - Cleared for Low, Moderate, and most High Risk Penn data
-callout: Not SSNs, card data, or PHI. Needs PennNet or GlobalProtect.
+callout: Important: Needs PennNet or GlobalProtect.
 
 ## bullets
-title: What You Would Actually Use It For
-- Draft and polish emails, memos, and announcements
-- Summarize a long document, report, or email thread
-- Brainstorm ideas when you face a blank page
-- Explain an unfamiliar concept or area of law in plain terms
-callout: Same PennKey login. Nothing to install.
+title: Pros and Cons of PennChat
+- Solid chatbot functionality, with relatively-current models
+- “Agents” are custom GPTs, but yours must be rebuilt here
+- Chatbot ONLY, nothing like Claude Cowork or Code
+- Noticeably slower than direct access, and results may differ
+callout: A good baseline. Not a replacement for direct access.
 
 ## table
 title: How It Compares
-| | PennChat | ChatGPT EDU | Claude.ai |
-| Who runs it | Penn | OpenAI | Anthropic |
-| Penn data cleared | Low, Moderate, most High | Low and Moderate | Not reviewed |
+| | PennChat | ChatGPT EDU | Claude.ai (Penn) |
+| Who runs it | Penn (Amazon) | OpenAI | Anthropic |
+| Penn data cleared | Low, Moderate, most High | Low and Moderate | Low and Moderate |
 | Models | Claude and GPT | GPT only | Claude only |
-| Cost to you | Free, credit-based | Free | Personal paid |
-commentary: When the work touches Penn data, use PennChat.
+| Cost to you | Free*, credit-based | $13/mo | $20/$50 |
+commentary: Long-term PennChat pricing/financing is TBD
 
 ## img-explain
 title: Demo: Let It Argue With You
@@ -60,13 +60,13 @@ filename: Model picker, expanded
 - Pin Claude Sonnet 5 so it is always the first thing you see
 
 ## bullets
-title: Agents Are Custom GPTs
+title: Agents :: Custom GPTs
 - An agent is a chat you have set up in advance:
   - instructions it always follows
   - knowledge files it can search
   - tools, including web search and a code interpreter
-- No import from ChatGPT: paste the instructions, re-upload the files
-callout: Every custom-GPT capability has an equivalent here.
+- No direct import from ChatGPT: paste the instructions, re-upload the files
+callout: Every custom-GPT capability has an equivalent here, plus more.
 
 ## img-explain
 title: Demo: Build a Virtual TA
