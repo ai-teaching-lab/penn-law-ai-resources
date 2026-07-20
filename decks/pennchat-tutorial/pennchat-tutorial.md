@@ -67,8 +67,8 @@ title: Agents :: Custom GPTs
   - instructions it always follows
   - knowledge files it can search
   - tools, including web search and a code interpreter
-- No direct import from ChatGPT: paste the instructions, re-upload the files
-callout: Every custom-GPT capability has an equivalent here, plus more.
+- No direct import: paste the instructions, re-upload the files
+callout: Most custom-GPT capabilities have an equivalent here.
 
 ## img-explain
 title: Demo: Build a Virtual TA
