@@ -28,10 +28,11 @@ callout: A good baseline. Not a replacement for direct access.
 title: How It Compares
 | | PennChat | ChatGPT EDU | Claude.ai (Penn) |
 | Who runs it | Penn (Amazon) | OpenAI | Anthropic |
-| Penn data cleared | Low, Moderate, most High | Low and Moderate | Low and Moderate |
+| Data cleared | Low / Mod / most High | Low / Moderate | Low / Moderate |
 | Models | Claude and GPT | GPT only | Claude only |
-| Cost to you | Free*, credit-based | $13/mo | $20/$50 |
-commentary: Long-term PennChat pricing/financing is TBD
+| Tools | Agents, no code | GPTs, no codex | Skills, no cowork |
+| Cost | Free*, credit-based | $13/mo | $20 / $50 |
+commentary: *Long-term PennChat pricing/financing is TBD
 
 ## img-explain
 title: Demo: Let It Argue With You
