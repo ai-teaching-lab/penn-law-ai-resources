@@ -20,6 +20,7 @@ callout: Important: Needs PennNet or GlobalProtect.
 title: Pros and Cons of PennChat
 - Solid chatbot functionality, with relatively-current models
 - “Agents” are custom GPTs, but yours must be rebuilt here
+  - Important: you cannot share PennChat Agents (yet)
 - Chatbot ONLY, nothing like Claude Cowork or Code
 - Noticeably slower than direct access, and results may differ
 callout: A good baseline. Not a replacement for direct access.
