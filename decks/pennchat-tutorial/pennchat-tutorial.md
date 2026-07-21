@@ -21,6 +21,7 @@ title: Pros and Cons of PennChat
 - Solid chatbot functionality, with relatively-current models
 - “Agents” are custom GPTs, but yours must be rebuilt here
   - Important: you cannot share PennChat Agents (yet)
+- No web search: it cannot look anything up or check a live source
 - Chatbot ONLY, nothing like Claude Cowork or Code
 - Noticeably slower than direct access, and results may differ
 callout: A good baseline. Not a replacement for direct access.
@@ -31,7 +32,7 @@ title: How It Compares
 | Who runs it | Penn (Amazon) | OpenAI | Anthropic |
 | Data cleared | Low / Mod / most High | Low / Moderate | Low / Moderate |
 | Models | Claude and GPT | GPT only | Claude only |
-| Tools | Agents, no code | GPTs, no codex | Skills + code, no cowork |
+| Tools | Agents, no web/code | GPTs, no codex | Skills + code, no cowork |
 | Cost | Free*, credit-based | $13/mo | $20 / $50 |
 commentary: *Long-term PennChat pricing/financing is TBD
 
@@ -66,9 +67,9 @@ title: Agents :: Custom GPTs
 - An agent is a chat you have set up in advance:
   - instructions it always follows
   - knowledge files it can search
-  - tools, including web search and a code interpreter
+  - tools, including a code interpreter
 - No direct import: paste the instructions, re-upload the files
-callout: Most custom-GPT capabilities have an equivalent here.
+callout: Most capabilities carry over, but web browsing does not.
 
 ## img-explain
 title: Demo: Build a Virtual TA
